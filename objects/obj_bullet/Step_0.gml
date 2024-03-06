@@ -1,0 +1,6 @@
+if(active)
+{
+	UpdateMovement();
+
+	UpdateWallCollision();
+}

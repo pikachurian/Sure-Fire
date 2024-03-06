@@ -104,7 +104,7 @@ function CheckBulletHit()
 			if(isPlayer) && (_bullets[|_i].bulletTarget == BT.player) ||
 			(!isPlayer) && (_bullets[|_i].bulletTarget == BT.enemy)
 			{
-				if(_bullets[|_i].canHurt)
+				if(_bullets[|_i].active)
 				{
 					//Take damage.
 					TakeDamage(_bullets[|_i].damage);

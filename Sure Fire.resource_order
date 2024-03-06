@@ -18,5 +18,9 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_actor","order":1,"path":"objects/obj_actor/obj_actor.yy",},
+    {"name":"obj_wall","order":3,"path":"objects/obj_wall/obj_wall.yy",},
+    {"name":"Input","order":1,"path":"scripts/Input/Input.yy",},
+    {"name":"spr_wall","order":1,"path":"sprites/spr_wall/spr_wall.yy",},
+    {"name":"obj_bullet","order":2,"path":"objects/obj_bullet/obj_bullet.yy",},
   ],
 }

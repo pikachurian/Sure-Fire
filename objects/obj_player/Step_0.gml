@@ -23,9 +23,14 @@ switch(state)
 			ChangeState(PS.controlMovableArrow);
 			movableArrowInstance = instance_create_depth(x, y, depth - 10, obj_movable_arrow);
 			obj_camera.target = movableArrowInstance;
+			if(dir == -1)
+				movableArrowInstance.SetDirection(180);
 		}
 			
 		UpdateSprite();
+		
+		//For some unholy reason this code only works outside of UpdateSprite.
+		image_xscale = dir;
 		break;
 		
 	case PS.controlMovableArrow:

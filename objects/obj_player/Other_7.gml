@@ -1,4 +1,4 @@
-if(sprite_index == hurtSprite)
+/*if(sprite_index == hurtSprite)
 {
 	sprite_index = idleSprite;
 	UpdateSprite();

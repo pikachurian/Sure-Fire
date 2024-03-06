@@ -41,7 +41,7 @@ function UpdateSprite()
 		return;
 		
 	//Face direction.
-	image_xscale = dir;
+	//image_xscale = dir;
 		
 	sprite_index = idleSprite;
 	if(hspd != 0) || (vspd != 0)

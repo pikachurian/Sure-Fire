@@ -12,7 +12,7 @@ enum INPUT
 	down,
 	horizontalAxis,
 	verticalAxis,
-	shoot,
+	shootPressed,
 	jump,
 	jumpPressed,
 	jumpReleased
@@ -59,7 +59,7 @@ function GetInput(_inputEnum)
 			_input = GetInput(INPUT.down) - GetInput(INPUT.up);
 			break;
 			
-		case INPUT.shoot:
+		case INPUT.shootPressed:
 			_input = keyboard_check_pressed(ord("J"));
 			break;
 	}

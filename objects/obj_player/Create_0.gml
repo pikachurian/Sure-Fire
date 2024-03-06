@@ -16,6 +16,8 @@ jumpSpd = 24;
 //1 = right, -1 = left.
 dir = 1;
 
+movableArrowInstance = noone;
+
 walkSprite = spr_player;//spr_player_walk;
 idleSprite = spr_player;//spr_player_idle;
 hurtSprite = spr_player;//spr_player_hurt;
@@ -25,7 +27,8 @@ deadSprite = spr_player;//spr_player_dead;
 enum PS 
 {
 	main,
-	dead
+	dead,
+	controlMovableArrow
 }
 
 state = PS.main;

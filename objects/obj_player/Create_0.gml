@@ -10,8 +10,8 @@ fric = 0.5;
 bulletDamage = 10;
 bulletSpeed = 4;//5;
 
-spd = 2;
-jumpSpd = 7;
+spd = 10;
+jumpSpd = 24;
 
 //1 = right, -1 = left.
 dir = 1;

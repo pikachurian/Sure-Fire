@@ -15,7 +15,7 @@ spd = 2;
 jumpSpd = 7;
 
 grav = 1;
-gravMax = 10;
+gravMax = 32;
 
 function ApplyGravity()
 {

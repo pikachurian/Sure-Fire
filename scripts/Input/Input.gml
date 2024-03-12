@@ -15,7 +15,9 @@ enum INPUT
 	shootPressed,
 	jump,
 	jumpPressed,
-	jumpReleased
+	jumpReleased,
+	loadPressed,
+	savePressed
 }
 
 function GetInput(_inputEnum)

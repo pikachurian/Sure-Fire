@@ -17,6 +17,12 @@ jumpSpd = 7;
 grav = 1;
 gravMax = 32;
 
+function LoadData(_struct)
+{
+	grav = _struct.grav;
+	gravMax = _struct.gravMax;
+}
+
 function ApplyGravity()
 {
 	vspd = min(vspd + grav, gravMax);

@@ -14,6 +14,29 @@ saveData =
 		jumpSpd : 24,
 		grav : 1,
 		gravMax : 32
+	},
+	
+	basicArrow :
+	{
+		rotateSpd : 1.5,
+		spd : 25,
+		rotateGrav : 0.5,
+
+		bulletTarget : BT.enemy,
+		bulletSprite : spr_arrow,
+		wallCollisionSprite : spr_arrow,
+		explodeSprite : spr_arrow
+	},
+	
+	movableArrow : 
+	{
+		rotateSpd : 1.5,
+		spd : 10,
+		
+		bulletTarget : BT.enemy,
+		bulletSprite : spr_arrow,
+		wallCollisionSprite : spr_arrow,
+		explodeSprite : spr_arrow
 	}
 }
 
@@ -40,6 +63,10 @@ function Load()
 		var _loadData = json_parse(_string);
 		//Load data.
 		obj_player.LoadData(_loadData.player);
+		if(instance_exists(obj_movable_arrow))
+			obj_movable_arrow.LoadData(saveData.movableArrow);
+		if(instance_exists(obj_basic_arrow))
+			obj_basic_arrow.LoadData(saveData.basicArrow);
 		
 		show_debug_message("Game Loaded: " + _string);
 	

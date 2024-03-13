@@ -1,12 +1,9 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_movable_arrow",
+  "name": "obj_enemy",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -15,8 +12,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "obj_bullet",
-    "path": "objects/obj_bullet/obj_bullet.yy",
+    "name": "obj_actor",
+    "path": "objects/obj_actor/obj_actor.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -34,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_movable_arrow",
-    "path": "sprites/spr_movable_arrow/spr_movable_arrow.yy",
+    "name": "spr_enemy_beta",
+    "path": "sprites/spr_enemy_beta/spr_enemy_beta.yy",
   },
   "spriteMaskId": null,
   "visible": true,

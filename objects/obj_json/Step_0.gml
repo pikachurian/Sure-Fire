@@ -1,8 +1,9 @@
-/// @description Insert description here
-// You can write your code in this editor
+if(GetInput(INPUT.savePressed))
+{
+	Save();	
+}
 
-
-
-
-
-
+if(GetInput(INPUT.loadPressed))
+{
+	Load();	
+}

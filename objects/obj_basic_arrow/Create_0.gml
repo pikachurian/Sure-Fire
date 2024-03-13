@@ -1,23 +1,19 @@
 event_inherited();
 
 rotateSpd = 1.5;//1;
-spd = 10;
+spd = 25;
+rotateGrav = 0.5;
 
-bulletTarget = BT.noone;
-bulletSprite = spr_movable_arrow;
-wallCollisionSprite = spr_movable_arrow;
-explodeSprite = spr_movable_arrow;
-
-function Turn(_inputAxis)
-{
-	var _newDir = dir + (_inputAxis * rotateSpd);
-	SetDirection(_newDir);
-}
+bulletTarget = BT.enemy;
+bulletSprite = spr_arrow;
+wallCollisionSprite = spr_arrow;
+explodeSprite = spr_arrow;
 
 function LoadData(_struct)
 {
 	rotateSpd = _struct.rotateSpd;
 	spd = _struct.spd;
+	rotateGrav = _struct.rotateGrav;
 	
 	bulletTarget = _struct.bulletTarget;
 	bulletSprite = _struct.bulletSprite;
@@ -26,4 +22,4 @@ function LoadData(_struct)
 }
 
 if(instance_exists(obj_json))
-	LoadData(obj_json.saveData.movableArrow);
+	LoadData(obj_json.saveData.basicArrow);

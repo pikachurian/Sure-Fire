@@ -20,6 +20,15 @@ switch(state)
 		//Fire bow.
 		if(GetInput(INPUT.shootPressed))
 		{
+			var _arrowInstance = instance_create_depth(x, y, depth - 10, obj_basic_arrow);
+			if(dir == -1)
+				_arrowInstance.SetDirection(180);
+			ds_list_add(shotArrows, _arrowInstance);
+		}
+		
+		//Fire movable arrow.
+		if(GetInput(INPUT.specialPressed))
+		{
 			ChangeState(PS.controlMovableArrow);
 			movableArrowInstance = instance_create_depth(x, y, depth - 10, obj_movable_arrow);
 			obj_camera.target = movableArrowInstance;

@@ -17,6 +17,7 @@ jumpSpd = 24;
 dir = 1;
 
 movableArrowInstance = noone;
+shotArrows = ds_list_create();
 
 walkSprite = spr_player;//spr_player_walk;
 idleSprite = spr_player;//spr_player_idle;
@@ -83,3 +84,6 @@ function ChangeState(_state)
 {
 	state = _state;
 }
+
+//if(instance_exists(obj_json))
+//	LoadData(obj_json.saveData.player);

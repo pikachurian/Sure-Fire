@@ -12,10 +12,7 @@ switch(state)
 			vspd = -jumpSpd;
 		else
 			ApplyGravity();
-		
-		MoveAndSlide();
-		CheckBulletHit();
-		UpdateForce();
+
 		
 		//Grapple.
 		CheckGrappleSurface();
@@ -25,14 +22,38 @@ switch(state)
 				ChangeState(PS.grappling);	
 		}
 		
+		//Aim bow.
+		if(GetInput(INPUT.shoot))
+		{
+			var _newShootAngle = point_direction(0, 0, GetInput(INPUT.horizontalAxis), GetInput(INPUT.verticalAxis));
+		
+			if(IsGrounded())
+			{
+				if(_newShootAngle > 181) && (_newShootAngle < 359)
+				{
+					if(GetInput(INPUT.horizontalAxis) == 1)
+						shootAngle = 0;
+					else if(GetInput(INPUT.horizontalAxis) == -1)
+						shootAngle = 180;
+				}else shootAngle = _newShootAngle;
+			}else shootAngle = _newShootAngle;
+				
+			//Freeze Movement.
+			shootHeldTick ++;
+			if(shootHeldTick >= shootHeldTime)
+				hspd = 0;
+		}
 		//Fire bow.
-		if(GetInput(INPUT.shootPressed))
+		if(GetInput(INPUT.shootReleased))
 		{
 			var _arrowInstance = instance_create_depth(x, y, depth - 10, obj_basic_arrow);
 			if(dir == -1)
 				_arrowInstance.SetDirection(180);
+			_arrowInstance.SetDirection(shootAngle);
 			ds_list_add(shotArrows, _arrowInstance);
 			obj_camera.shakeStrength = 10;
+			
+			shootHeldTick = 0;
 		}
 		
 		//Fire movable arrow.
@@ -45,6 +66,10 @@ switch(state)
 			if(dir == -1)
 				movableArrowInstance.SetDirection(180);
 		}
+	
+		MoveAndSlide();
+		CheckBulletHit();
+		UpdateForce();
 			
 		UpdateSprite();
 		

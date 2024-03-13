@@ -16,6 +16,10 @@ jumpSpd = 24;
 //1 = right, -1 = left.
 dir = 1;
 
+shootAngle = 0;
+shootHeldTick = 0;
+shootHeldTime = 0.15 * game_get_speed(gamespeed_fps);
+
 grappleRange = 500;
 grappleSpd = 50;
 grappleTargetInstance = instance_create_depth(0, 0, depth - 20, obj_grapple_target);

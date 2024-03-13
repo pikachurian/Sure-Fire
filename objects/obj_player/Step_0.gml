@@ -32,6 +32,7 @@ switch(state)
 			if(dir == -1)
 				_arrowInstance.SetDirection(180);
 			ds_list_add(shotArrows, _arrowInstance);
+			obj_camera.shakeStrength = 10;
 		}
 		
 		//Fire movable arrow.

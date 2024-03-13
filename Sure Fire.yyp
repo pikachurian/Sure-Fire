@@ -56,6 +56,7 @@
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
+    {"id":{"name":"obj_arrow_trail","path":"objects/obj_arrow_trail/obj_arrow_trail.yy",},},
     {"id":{"name":"obj_grapple_target","path":"objects/obj_grapple_target/obj_grapple_target.yy",},},
     {"id":{"name":"spr_camera_debug","path":"sprites/spr_camera_debug/spr_camera_debug.yy",},},
     {"id":{"name":"obj_game_master","path":"objects/obj_game_master/obj_game_master.yy",},},

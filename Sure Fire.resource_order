@@ -36,6 +36,7 @@
     {"name":"obj_basic_arrow","order":9,"path":"objects/obj_basic_arrow/obj_basic_arrow.yy",},
     {"name":"spr_arrow","order":2,"path":"sprites/spr_arrow/spr_arrow.yy",},
     {"name":"obj_enemy","order":8,"path":"objects/obj_enemy/obj_enemy.yy",},
+    {"name":"obj_arrow_trail","order":12,"path":"objects/obj_arrow_trail/obj_arrow_trail.yy",},
     {"name":"obj_grapple_target","order":11,"path":"objects/obj_grapple_target/obj_grapple_target.yy",},
     {"name":"spr_camera_debug","order":3,"path":"sprites/spr_camera_debug/spr_camera_debug.yy",},
     {"name":"obj_game_master","order":4,"path":"objects/obj_game_master/obj_game_master.yy",},

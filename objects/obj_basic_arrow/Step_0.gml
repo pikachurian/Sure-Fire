@@ -8,6 +8,8 @@ if(active)
 	UpdateMovement();
 
 	UpdateWallCollision();
+	
+	UpdateTrail();
 }
 
 tick ++;

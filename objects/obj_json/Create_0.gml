@@ -75,7 +75,7 @@ function Load()
 	return false;
 }
 
-if(Load() == false)
+/*if(Load() == false)
 {
 	Save();
-}
+}*/

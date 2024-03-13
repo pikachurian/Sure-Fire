@@ -34,13 +34,13 @@ enum PS
 
 state = PS.main;
 
-function LoadData(_struct)
+/*function LoadData(_struct)
 {
 	spd = _struct.spd;
 	jumpSpd = _struct.jumpSpd;
 	grav = _struct.grav;
 	gravMax = _struct.gravMax;
-}
+}*/
 
 function UpdateSprite()
 {

@@ -1,4 +1,4 @@
-if(GetInput(INPUT.savePressed))
+/*if(GetInput(INPUT.savePressed))
 {
 	Save();	
 }
@@ -6,4 +6,4 @@ if(GetInput(INPUT.savePressed))
 if(GetInput(INPUT.loadPressed))
 {
 	Load();	
-}
+}*/

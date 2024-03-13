@@ -5,7 +5,7 @@ spd = 10;
 
 bulletTarget = BT.noone;
 bulletSprite = spr_movable_arrow;
-wallCollisionSprite = spr_movable_arrow;
+wallCollisionSprite = spr_arrow_collision;
 explodeSprite = spr_movable_arrow;
 
 function Turn(_inputAxis)
@@ -14,7 +14,7 @@ function Turn(_inputAxis)
 	SetDirection(_newDir);
 }
 
-function LoadData(_struct)
+/*function LoadData(_struct)
 {
 	rotateSpd = _struct.rotateSpd;
 	spd = _struct.spd;
@@ -26,4 +26,4 @@ function LoadData(_struct)
 }
 
 if(instance_exists(obj_json))
-	LoadData(obj_json.saveData.movableArrow);
+	LoadData(obj_json.saveData.movableArrow);*/

@@ -2,14 +2,35 @@ event_inherited();
 
 rotateSpd = 1.5;//1;
 spd = 25;
-rotateGrav = 0.5;
+gravStartTime = 0.3 * game_get_speed(gamespeed_fps);
+tick = 0;
+rotateGrav = 0.01;
+rotateVelocity = 0;
+rotateVelocityMax = 10;
 
 bulletTarget = BT.enemy;
 bulletSprite = spr_arrow;
-wallCollisionSprite = spr_arrow;
+wallCollisionSprite = spr_arrow_collision;
 explodeSprite = spr_arrow;
 
-function LoadData(_struct)
+function UpdateRotateGravity()
+{
+	//Apply arrow gravity.
+	if(image_angle > 90) && (image_angle < 270)
+	{
+		//Arrow facing left.	
+		rotateVelocity = min(rotateVelocity + rotateGrav, 270)
+		//SetDirection(min(image_angle + rotateGrav, 270));
+	}else
+	{
+		//Arrow facing right.
+		//SetDirection(max(image_angle - rotateGrav, -90));
+		rotateVelocity = max(rotateVelocity - rotateGrav, -90)
+	}
+	rotateVelocity = clamp(rotateVelocity, -rotateVelocityMax, rotateVelocityMax);
+}
+
+/*function LoadData(_struct)
 {
 	rotateSpd = _struct.rotateSpd;
 	spd = _struct.spd;
@@ -22,4 +43,4 @@ function LoadData(_struct)
 }
 
 if(instance_exists(obj_json))
-	LoadData(obj_json.saveData.basicArrow);
+	LoadData(obj_json.saveData.basicArrow);*/

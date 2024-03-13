@@ -27,6 +27,22 @@ if(instance_exists(target))
 	
 }
 
+//Zoom.
+var _alpha = 0.2;
+
+var _newWidth = lerp(viewWidth, zoom * defaultViewWidth, _alpha);
+var _newHeight = lerp(viewHeight, zoom * defaultViewHeight, _alpha);
+
+camera_set_view_size(cam, _newWidth, _newHeight);
+
+x = lerp(x, x + (viewWidth - zoom * defaultViewWidth) / 2, _alpha);
+y = lerp(y, y + (viewHeight - zoom * defaultViewHeight) / 2, _alpha);
+
+viewWidth = _newWidth;
+viewHeight = _newHeight;
+
+zoom -= 0.001
+
 //Screen shake.
 x += random_range(-shakeStrength, shakeStrength);
 y += random_range(-shakeStrength, shakeStrength);
@@ -35,5 +51,9 @@ shakeStrength *= shakeDecay;
 
 x = round(x);
 y = round(y);
+	
+//Clamp position.
+x = clamp(x, 0, room_width - viewWidth);
+y = clamp(y, 0, room_height - viewHeight);
 	
 camera_set_view_pos(view_camera[0], x, y);

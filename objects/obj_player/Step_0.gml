@@ -17,6 +17,14 @@ switch(state)
 		CheckBulletHit();
 		UpdateForce();
 		
+		//Grapple.
+		CheckGrappleSurface();
+		if(GetInput(INPUT.grapplePressed)) && (IsGrounded())
+		{
+			if(grappleTargetInstance.canGrapple == true) && (grappleTargetInstance.y < y)
+				ChangeState(PS.grappling);	
+		}
+		
 		//Fire bow.
 		if(GetInput(INPUT.shootPressed))
 		{
@@ -32,6 +40,7 @@ switch(state)
 			ChangeState(PS.controlMovableArrow);
 			movableArrowInstance = instance_create_depth(x, y, depth - 10, obj_movable_arrow);
 			obj_camera.target = movableArrowInstance;
+			obj_camera.zoom = 0.75;
 			if(dir == -1)
 				movableArrowInstance.SetDirection(180);
 		}
@@ -50,6 +59,21 @@ switch(state)
 		{
 			ChangeState(PS.main);
 			obj_camera.target = id;
+			obj_camera.zoom = 1;
+		}
+		break;
+		
+	case PS.grappling:
+		var _dir = point_direction(x, y, grappleTargetInstance.x, grappleTargetInstance.y);
+		x += lengthdir_x(grappleSpd, _dir);
+		y += lengthdir_y(grappleSpd, _dir);
+		
+		if(place_meeting(x, y, obj_wall)) && (place_meeting(x, y, obj_grapple_surface))
+		{
+			while(place_meeting(x, y, obj_wall))
+				y -= 1;
+				
+			ChangeState(PS.main);
 		}
 		break;
 }

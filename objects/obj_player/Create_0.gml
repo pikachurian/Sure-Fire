@@ -7,14 +7,19 @@ hp = hpMax;
 
 fric = 0.5;
 
-bulletDamage = 10;
-bulletSpeed = 4;//5;
+//bulletDamage = 10;
+//bulletSpeed = 4;//5;
 
 spd = 10;
 jumpSpd = 24;
 
 //1 = right, -1 = left.
 dir = 1;
+
+grappleRange = 500;
+grappleSpd = 50;
+grappleTargetInstance = instance_create_depth(0, 0, depth - 20, obj_grapple_target);
+
 
 movableArrowInstance = noone;
 shotArrows = ds_list_create();
@@ -29,7 +34,8 @@ enum PS
 {
 	main,
 	dead,
-	controlMovableArrow
+	controlMovableArrow,
+	grappling
 }
 
 state = PS.main;
@@ -54,6 +60,18 @@ function UpdateSprite()
 	sprite_index = idleSprite;
 	if(hspd != 0) || (vspd != 0)
 		sprite_index = walkSprite;
+}
+
+function CheckGrappleSurface()
+{
+	if(instance_exists(obj_grapple_surface))
+	{
+		var _inst = instance_nearest(x, y, obj_grapple_surface);
+		grappleTargetInstance.SetTarget(_inst.x, _inst.y);
+	}else
+	{
+		grappleTargetInstance.CancelTarget();
+	}
 }
 
 function TakeDamage(_amount)

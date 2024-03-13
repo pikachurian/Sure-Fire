@@ -41,7 +41,7 @@ y = lerp(y, y + (viewHeight - zoom * defaultViewHeight) / 2, _alpha);
 viewWidth = _newWidth;
 viewHeight = _newHeight;
 
-zoom -= 0.001
+//zoom -= 0.001
 
 //Screen shake.
 x += random_range(-shakeStrength, shakeStrength);

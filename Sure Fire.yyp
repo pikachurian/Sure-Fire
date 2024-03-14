@@ -40,6 +40,7 @@
     {"id":{"name":"obj_json","path":"objects/obj_json/obj_json.yy",},},
     {"id":{"name":"obj_actor","path":"objects/obj_actor/obj_actor.yy",},},
     {"id":{"name":"spr_grapple_target","path":"sprites/spr_grapple_target/spr_grapple_target.yy",},},
+    {"id":{"name":"obj_enemy14","path":"objects/obj_enemy14/obj_enemy14.yy",},},
     {"id":{"name":"spr_arrow_collision10","path":"sprites/spr_arrow_collision10/spr_arrow_collision10.yy",},},
     {"id":{"name":"spr_arrow_wide","path":"sprites/spr_arrow_wide/spr_arrow_wide.yy",},},
     {"id":{"name":"Global","path":"scripts/Global/Global.yy",},},

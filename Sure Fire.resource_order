@@ -22,6 +22,7 @@
     {"name":"obj_json","order":7,"path":"objects/obj_json/obj_json.yy",},
     {"name":"obj_actor","order":1,"path":"objects/obj_actor/obj_actor.yy",},
     {"name":"spr_grapple_target","order":11,"path":"sprites/spr_grapple_target/spr_grapple_target.yy",},
+    {"name":"obj_enemy14","order":13,"path":"objects/obj_enemy14/obj_enemy14.yy",},
     {"name":"spr_arrow_collision10","order":9,"path":"sprites/spr_arrow_collision10/spr_arrow_collision10.yy",},
     {"name":"spr_arrow_wide","order":6,"path":"sprites/spr_arrow_wide/spr_arrow_wide.yy",},
     {"name":"obj_wall","order":3,"path":"objects/obj_wall/obj_wall.yy",},

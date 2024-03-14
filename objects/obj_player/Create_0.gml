@@ -22,7 +22,7 @@ shootHeldTime = 0.15 * game_get_speed(gamespeed_fps);
 
 grappleRange = 1000;//500;
 grappleSpd = 50;
-grappleTargetInstance = instance_create_depth(0, 0, depth - 20, obj_grapple_target);
+grappleTargetInstance = instance_create_depth(-1000, -1000, depth - 20, obj_grapple_target);
 
 
 movableArrowInstance = noone;
@@ -33,6 +33,9 @@ walkSprite = spr_player;//spr_player_walk;
 idleSprite = spr_player;//spr_player_idle;
 hurtSprite = spr_player;//spr_player_hurt;
 deadSprite = spr_player;//spr_player_dead;
+
+grappleUnlocked = false;
+movableArrowUnlocked = false;
 
 //Player State.
 enum PS 

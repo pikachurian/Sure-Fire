@@ -32,6 +32,11 @@ function IsGrounded()
 {
 	if(place_meeting(x, y + 1, obj_wall))
 		return true;
+		
+	var _door = instance_place(x, y + 1, obj_door);
+	if(_door != noone) && (_door.opened != true)
+		return true;
+		
 	return false;
 }
 
@@ -47,6 +52,19 @@ function MoveAndSlide()
 		hspd = 0;
 	}
 	
+	//X Door collisions.
+	var _door = instance_place(x + hspd, y, obj_door);
+	if(_door != noone)
+	{
+		if(_door.opened == false)
+		{
+			while(!place_meeting(x + sign(hspd), y, obj_door))
+				x += sign(hspd);
+				
+			hspd = 0;
+		}
+	}
+	
 	x += hspd;
 	
 	//Y collisions.
@@ -56,6 +74,19 @@ function MoveAndSlide()
 			y += sign(vspd);
 			
 		vspd = 0;
+	}
+	
+	//X Door collisions.
+	var _door = instance_place(x, y + vspd, obj_door);
+	if(_door != noone)
+	{
+		if(_door.opened == false)
+		{
+			while(!place_meeting(x, y + sign(vspd), obj_door))
+				y += sign(vspd);
+				
+			vspd = 0;
+		}
 	}
 	
 	y += vspd;

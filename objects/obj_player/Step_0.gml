@@ -15,11 +15,14 @@ switch(state)
 
 		
 		//Grapple.
-		CheckGrappleSurface();
-		if(GetInput(INPUT.grapplePressed)) && (IsGrounded())
+		if(grappleUnlocked == true)
 		{
-			if(grappleTargetInstance.canGrapple == true) && (grappleTargetInstance.y < y)
-				ChangeState(PS.grappling);	
+			CheckGrappleSurface();
+			if(GetInput(INPUT.grapplePressed)) && (IsGrounded())
+			{
+				if(grappleTargetInstance.canGrapple == true) && (grappleTargetInstance.y < y)
+					ChangeState(PS.grappling);	
+			}
 		}
 		
 		//Shoot arrow logic.
@@ -29,7 +32,7 @@ switch(state)
 		}
 		
 		//Fire movable arrow.
-		if(movableArrowInstance == noone)
+		if(movableArrowInstance == noone) && (movableArrowUnlocked == true)
 		{
 			if(GetInput(INPUT.specialPressed))
 			{

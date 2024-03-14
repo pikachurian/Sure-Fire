@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_door",
+  "name": "obj_basic_trigger",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -11,7 +11,10 @@
     "name": "Level",
     "path": "folders/Objects/Level.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_trigger",
+    "path": "objects/obj_trigger/obj_trigger.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -28,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_door_beta",
-    "path": "sprites/spr_door_beta/spr_door_beta.yy",
+    "name": "spr_basic_trigger_beta",
+    "path": "sprites/spr_basic_trigger_beta/spr_basic_trigger_beta.yy",
   },
   "spriteMaskId": null,
   "visible": true,

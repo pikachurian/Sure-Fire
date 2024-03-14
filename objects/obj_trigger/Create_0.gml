@@ -1,0 +1,4 @@
+function Action()
+{
+	//Do something.
+}

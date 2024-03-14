@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_door_beta",
+  "name": "spr_door_switch_beta",
   "bbox_bottom": 127,
   "bbox_left": 0,
   "bbox_right": 127,
@@ -14,6 +14,7 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"27ad7df0-8b73-4b68-ae38-76d27f597259",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"dd1da329-95f2-4411-96a1-8e12bb63ea76",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -32,7 +33,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_door_beta",
+    "name": "spr_door_switch_beta",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -43,18 +44,19 @@
     "events": {"resourceType":"KeyframeStore<MessageEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "eventStubScript": null,
     "eventToFunction": {},
-    "length": 1.0,
+    "length": 2.0,
     "lockOrigin": false,
     "moments": {"resourceType":"KeyframeStore<MomentsEventKeyframe>","resourceVersion":"1.0","Keyframes":[],},
     "playback": 1,
-    "playbackSpeed": 30.0,
+    "playbackSpeed": 0.0,
     "playbackSpeedType": 0,
     "showBackdrop": true,
     "showBackdropImage": false,
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"27ad7df0-8b73-4b68-ae38-76d27f597259","path":"sprites/spr_door_beta/spr_door_beta.yy",},},},"Disabled":false,"id":"f7efa313-e460-45bc-8599-5f83aabc1a0e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"27ad7df0-8b73-4b68-ae38-76d27f597259","path":"sprites/spr_door_switch_beta/spr_door_switch_beta.yy",},},},"Disabled":false,"id":"94992ea9-c079-4baf-bb04-5b2c3727ea93","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"dd1da329-95f2-4411-96a1-8e12bb63ea76","path":"sprites/spr_door_switch_beta/spr_door_switch_beta.yy",},},},"Disabled":false,"id":"b1a4e014-28f9-4b31-8f4e-2a10554ca0d7","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -24,6 +24,22 @@ if(active)
 	UpdateWallCollision();
 	
 	UpdateTrail();
+}else if(collected == false)
+{
+	if(point_distance(x, y, obj_player.x, obj_player.y) <= pickupRange)
+	{
+		collected = true;
+	}
+}else
+{
+	x = lerp(x, obj_player.x, 0.2);
+	y = lerp(y, obj_player.y, 0.2);
+	
+	if(place_meeting(x, y, obj_player))
+	{
+		ds_list_delete(obj_player.shotArrows, ds_list_find_index(obj_player.shotArrows, id));
+		instance_destroy();
+	}
 }
 
 tick ++;

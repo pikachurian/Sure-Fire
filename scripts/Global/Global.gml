@@ -6,6 +6,18 @@ function Global(){
 
 randomize();
 
+//Direction.
+enum DIR 
+{
+	left,
+	right,
+	up,
+	down
+}
+
+global.playerStartX = -1;
+global.playerStartY = -1;
+
 //Percent determines how much of the bar should be filled.
 //1 = full.  0.5 = half filled.
 function DrawBar(_percent, _x, _y, _width, _height, _borderSize, _color, _borderColor)
@@ -51,4 +63,16 @@ function Approach(_a, _b, _amount)
 	}
 
 	    return _a;
+}
+
+function RoomGotoTransition(_room, _transitionDirection, _time = -1)
+{
+	with(instance_create_depth(0, 0, 0, obj_room_transition))
+	{
+		nextRoom = _room;
+		dir = _transitionDirection;
+		
+		if(_time > 0)
+			time = _time;
+	}
 }

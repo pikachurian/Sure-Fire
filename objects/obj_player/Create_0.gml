@@ -53,6 +53,14 @@ state = PS.main;
 	gravMax = _struct.gravMax;
 }*/
 
+//Go to start position.
+/*//For moving between rooms.
+if(global.playerStartX != -1)
+	x = global.playerStartX;
+	
+if(global.playerStartY != -1)
+	y = global.playerStartY;*/
+
 //Handles the logic for shooting and aiming an arrow.
 function ShootArrowLogic()
 {

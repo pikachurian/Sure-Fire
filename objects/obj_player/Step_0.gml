@@ -29,14 +29,17 @@ switch(state)
 		}
 		
 		//Fire movable arrow.
-		if(GetInput(INPUT.specialPressed))
+		if(movableArrowInstance == noone)
 		{
-			ChangeState(PS.controlMovableArrow);
-			movableArrowInstance = instance_create_depth(x, y, depth - 10, obj_movable_arrow);
-			obj_camera.target = movableArrowInstance;
-			obj_camera.zoom = 0.75;
-			if(dir == -1)
-				movableArrowInstance.SetDirection(180);
+			if(GetInput(INPUT.specialPressed))
+			{
+				ChangeState(PS.controlMovableArrow);
+				movableArrowInstance = instance_create_depth(x, y, depth - 10, obj_movable_arrow);
+				obj_camera.target = movableArrowInstance;
+				obj_camera.zoom = 0.75;
+				if(dir == -1)
+					movableArrowInstance.SetDirection(180);
+			}
 		}
 	
 		MoveAndSlide();

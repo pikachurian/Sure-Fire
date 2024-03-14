@@ -8,6 +8,9 @@ bulletSprite = spr_movable_arrow;
 wallCollisionSprite = spr_arrow_collision;
 explodeSprite = spr_movable_arrow;
 
+pickupRange = 128;
+collected = false;
+
 function Turn(_inputAxis)
 {
 	var _newDir = dir + (_inputAxis * rotateSpd);

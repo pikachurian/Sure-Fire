@@ -32,3 +32,23 @@ function DrawBar(_percent, _x, _y, _width, _height, _borderSize, _color, _border
 	}
 }
 
+function Approach(_a, _b, _amount)
+{
+	// Moves "a" towards "b" by "amount" and returns the result.
+	// Nice bcause it will not overshoot "b", and works in both directions.
+ 
+	if (_a < _b)
+	{
+	    _a += _amount;
+	    if (_a > _b)
+	        return _b;
+	}
+	else
+	{
+	    _a -= _amount;
+	    if (_a < _b)
+	        return _b;
+	}
+
+	    return _a;
+}

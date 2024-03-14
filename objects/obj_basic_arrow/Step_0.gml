@@ -14,7 +14,7 @@ if(active)
 		if(point_distance(x, y, _inst.x, _inst.y) <= homingRange)
 		{
 			var _targetDir = point_direction(x, y, _inst.x, _inst.y);
-			var _newDir = lerp(image_angle, _targetDir, 0.2);
+			var _newDir = Approach(image_angle, _targetDir, homingSpd);//lerp(image_angle, _targetDir, 0.2);
 			SetDirection(_newDir);
 		}
 	}

@@ -18,6 +18,7 @@ trailSpawnTick = 0;
 
 homingRange = 540;
 homingSpd = 0.6;
+homingTargetObjects = [obj_enemy, obj_trigger];
 
 pickupRange = 128;//320;
 collected = false;

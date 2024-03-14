@@ -12,3 +12,12 @@ function Reaction()
 		//mask_index = spr_empty;
 	}
 }
+
+function SetOpened(_openedState)
+{
+	opened = _openedState;
+	if(opened == true)
+		image_alpha = 0.5
+	else
+		image_alpha = 1;
+}

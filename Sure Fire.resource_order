@@ -18,6 +18,7 @@
     {"name":"Level","order":14,"path":"folders/Objects/Level.yy",},
     {"name":"Player","order":15,"path":"folders/Objects/Player.yy",},
     {"name":"Enemy","order":16,"path":"folders/Objects/Enemy.yy",},
+    {"name":"Pick Ups","order":21,"path":"folders/Sprites/Pick Ups.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_movable_arrow","order":5,"path":"sprites/spr_movable_arrow/spr_movable_arrow.yy",},
@@ -27,6 +28,7 @@
     {"name":"spr_grapple_target","order":11,"path":"sprites/spr_grapple_target/spr_grapple_target.yy",},
     {"name":"spr_door_beta","order":18,"path":"sprites/spr_door_beta/spr_door_beta.yy",},
     {"name":"obj_enemy14","order":1,"path":"objects/obj_enemy14/obj_enemy14.yy",},
+    {"name":"obj_switch_door","order":9,"path":"objects/obj_switch_door/obj_switch_door.yy",},
     {"name":"spr_camera_debug16","order":15,"path":"sprites/spr_camera_debug16/spr_camera_debug16.yy",},
     {"name":"spr_door_switch_beta","order":19,"path":"sprites/spr_door_switch_beta/spr_door_switch_beta.yy",},
     {"name":"obj_basic_trigger","order":6,"path":"objects/obj_basic_trigger/obj_basic_trigger.yy",},
@@ -42,6 +44,7 @@
     {"name":"spr_wall","order":1,"path":"sprites/spr_wall/spr_wall.yy",},
     {"name":"spr_enemy_beta","order":4,"path":"sprites/spr_enemy_beta/spr_enemy_beta.yy",},
     {"name":"spr_grapple_surface","order":10,"path":"sprites/spr_grapple_surface/spr_grapple_surface.yy",},
+    {"name":"obj_switch_trigger","order":8,"path":"objects/obj_switch_trigger/obj_switch_trigger.yy",},
     {"name":"spr_arrow","order":2,"path":"sprites/spr_arrow/spr_arrow.yy",},
     {"name":"spr_room_exit_beta","order":12,"path":"sprites/spr_room_exit_beta/spr_room_exit_beta.yy",},
     {"name":"obj_player","order":2,"path":"objects/obj_player/obj_player.yy",},

@@ -20,7 +20,7 @@ shootAngle = 0;
 shootHeldTick = 0;
 shootHeldTime = 0.15 * game_get_speed(gamespeed_fps);
 
-grappleRange = 500;
+grappleRange = 1000;//500;
 grappleSpd = 50;
 grappleTargetInstance = instance_create_depth(0, 0, depth - 20, obj_grapple_target);
 
@@ -121,7 +121,10 @@ function CheckGrappleSurface()
 	if(instance_exists(obj_grapple_surface))
 	{
 		var _inst = instance_nearest(x, y, obj_grapple_surface);
-		grappleTargetInstance.SetTarget(_inst.x, _inst.y);
+		if(point_distance(x, y, _inst.x, _inst.y) <= grappleRange)
+			grappleTargetInstance.SetTarget(_inst.x, _inst.y);
+		else
+			grappleTargetInstance.CancelTarget();
 	}else
 	{
 		grappleTargetInstance.CancelTarget();

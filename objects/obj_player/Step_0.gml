@@ -23,6 +23,14 @@ switch(state)
 		}
 		
 		//Aim bow.
+		if(GetInput(INPUT.shootPressed))
+		{
+			if(dir == 1)
+				shootAngle = 0;
+			else if(dir == -1)
+				shootAngle = 180;
+		}
+		
 		if(GetInput(INPUT.shoot))
 		{
 			if(GetInput(INPUT.horizontalAxis) != 0) || (GetInput(INPUT.verticalAxis) != 0)
@@ -40,7 +48,7 @@ switch(state)
 					}else shootAngle = _newShootAngle;
 				}else shootAngle = _newShootAngle;
 			}
-				
+			show_debug_message(string(shootAngle));
 			//Freeze Movement.
 			shootHeldTick ++;
 			if(shootHeldTick >= shootHeldTime)

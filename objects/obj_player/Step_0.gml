@@ -25,18 +25,21 @@ switch(state)
 		//Aim bow.
 		if(GetInput(INPUT.shoot))
 		{
-			var _newShootAngle = point_direction(0, 0, GetInput(INPUT.horizontalAxis), GetInput(INPUT.verticalAxis));
-		
-			if(IsGrounded())
+			if(GetInput(INPUT.horizontalAxis) != 0) || (GetInput(INPUT.verticalAxis) != 0)
 			{
-				if(_newShootAngle > 181) && (_newShootAngle < 359)
+				var _newShootAngle = point_direction(0, 0, GetInput(INPUT.horizontalAxis), GetInput(INPUT.verticalAxis));
+		
+				if(IsGrounded())
 				{
-					if(GetInput(INPUT.horizontalAxis) == 1)
-						shootAngle = 0;
-					else if(GetInput(INPUT.horizontalAxis) == -1)
-						shootAngle = 180;
+					if(_newShootAngle > 181) && (_newShootAngle < 359)
+					{
+						if(GetInput(INPUT.horizontalAxis) == 1)
+							shootAngle = 0;
+						else if(GetInput(INPUT.horizontalAxis) == -1)
+							shootAngle = 180;
+					}else shootAngle = _newShootAngle;
 				}else shootAngle = _newShootAngle;
-			}else shootAngle = _newShootAngle;
+			}
 				
 			//Freeze Movement.
 			shootHeldTick ++;

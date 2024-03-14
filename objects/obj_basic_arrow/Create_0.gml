@@ -16,6 +16,9 @@ explodeSprite = spr_arrow;
 trailSpawnTime = 0.1 * game_get_speed(gamespeed_fps);
 trailSpawnTick = 0;
 
+homingRange = 240;
+homingSpd = 0.05;
+
 function UpdateRotateGravity()
 {
 	//Apply arrow gravity.

@@ -25,7 +25,7 @@ collected = false;
 
 pullSpd = 0;
 pullAccel = 1;
-pullSpdMax = 12;
+pullSpdMax = 32;//12;
 
 //Gravity for when the arrow is not active.
 hspd = 0;

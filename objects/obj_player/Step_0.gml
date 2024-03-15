@@ -26,9 +26,11 @@ switch(state)
 		}
 		
 		//Shoot arrow logic.
+		show_debug_message(canShootArrow)
 		if(ds_list_size(shotArrows) < arrowsMax)
 		{
-			ShootArrowLogic();
+			if(canShootArrow == true)	
+				ShootArrowLogic();
 		}else
 		{
 			PullArrowLogic(obj_basic_arrow, INPUT.shoot, INPUT.shootReleased);
@@ -87,3 +89,6 @@ switch(state)
 		}
 		break;
 }
+
+if(GetInput(INPUT.shootReleased))
+	canShootArrow = true;

@@ -29,13 +29,16 @@ movableArrowInstance = noone;
 shotArrows = ds_list_create();
 arrowsMax = 1;//3;
 
+canShootArrow = true;
+//canShootMovableArrow = true;
+
 walkSprite = spr_player;//spr_player_walk;
 idleSprite = spr_player;//spr_player_idle;
 hurtSprite = spr_player;//spr_player_hurt;
 deadSprite = spr_player;//spr_player_dead;
 
-grappleUnlocked = true//false;
-movableArrowUnlocked = true//false;
+grappleUnlocked = true;//false;
+movableArrowUnlocked = true;//false;
 
 //Player State.
 enum PS 
@@ -121,7 +124,10 @@ function PullArrowLogic(_arrowObjectIndex, _heldInputEnum, _releasedInputEnum)
 		if(instance_exists(_arrowObjectIndex))
 		{
 			with(_arrowObjectIndex)
+			{
 				Pull();
+			}
+			canShootArrow = false;
 		}
 	}
 	
@@ -131,7 +137,9 @@ function PullArrowLogic(_arrowObjectIndex, _heldInputEnum, _releasedInputEnum)
 		if(instance_exists(_arrowObjectIndex))
 		{
 			with(_arrowObjectIndex)
+			{
 				CancelPull();
+			}
 		}
 	}
 }

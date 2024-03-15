@@ -19,7 +19,7 @@ pullSpdMax = 12;
 hspd = 0;
 vspd = 0;
 grav = 1;
-gravMax = 16;
+gravMax = 32;//16;
 
 unstuck = false;
 

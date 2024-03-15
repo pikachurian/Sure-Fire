@@ -44,7 +44,18 @@ function UpdateWallCollision()
 	//Wall collision.
 	var _imageIndex = image_index;
 	sprite_index = wallCollisionSprite;
+	
 	if(place_meeting(x, y, obj_wall))
+		Destroy();
+	else
+	{
+		sprite_index = bulletSprite;
+		image_index = _imageIndex;
+	}	
+	
+	//Door collision.
+	var _door = instance_place(x, y, obj_door);
+	if(_door != noone) && (_door.opened == false)
 		Destroy();
 	else
 	{

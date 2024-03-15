@@ -8,6 +8,10 @@ if(active)
 	if(point_distance(x, y, obj_player.x, obj_player.y) <= pickupRange)
 	{
 		collected = true;
+	}else if(unstuck == true)
+	{
+		ApplyGravity();
+		MoveAndSlide();
 	}
 }else
 {

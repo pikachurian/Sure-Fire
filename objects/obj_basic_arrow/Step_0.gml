@@ -8,6 +8,7 @@ if(active)
 	SetDirection(image_angle + rotateVelocity);
 	
 	//Homing.
+	#region Homing
 	//if(instance_exists(obj_enemy))
 	//{
 		//var _inst = instance_nearest(x, y, obj_enemy);
@@ -76,6 +77,7 @@ if(active)
 			ds_priority_destroy(_targets);
 		//}
 	//}
+	#endregion
 	
 	UpdateMovement();
 
@@ -87,6 +89,10 @@ if(active)
 	if(point_distance(x, y, obj_player.x, obj_player.y) <= pickupRange)
 	{
 		collected = true;
+	}else if(unstuck == true)
+	{
+		ApplyGravity();
+		MoveAndSlide();
 	}
 }else
 {

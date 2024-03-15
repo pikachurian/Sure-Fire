@@ -21,6 +21,8 @@ enum INPUT
 	loadPressed,
 	savePressed,
 	specialPressed,
+	special,
+	specialReleased,
 	grapplePressed
 }
 
@@ -79,6 +81,14 @@ function GetInput(_inputEnum)
 			
 		case INPUT.specialPressed:
 			_input = keyboard_check_pressed(ord("K"));
+			break;
+			
+		case INPUT.special:
+			_input = keyboard_check(ord("K"));
+			break;
+			
+		case INPUT.specialReleased:
+			_input = keyboard_check_released(ord("K"));
 			break;
 			
 		case INPUT.savePressed:

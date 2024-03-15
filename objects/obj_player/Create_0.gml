@@ -27,15 +27,15 @@ grappleTargetInstance = instance_create_depth(-1000, -1000, depth - 20, obj_grap
 
 movableArrowInstance = noone;
 shotArrows = ds_list_create();
-arrowsMax = 3;
+arrowsMax = 1;//3;
 
 walkSprite = spr_player;//spr_player_walk;
 idleSprite = spr_player;//spr_player_idle;
 hurtSprite = spr_player;//spr_player_hurt;
 deadSprite = spr_player;//spr_player_dead;
 
-grappleUnlocked = false;
-movableArrowUnlocked = false;
+grappleUnlocked = true//false;
+movableArrowUnlocked = true//false;
 
 //Player State.
 enum PS 
@@ -110,6 +110,29 @@ function ShootArrowLogic()
 		obj_camera.shakeStrength = 10;
 		
 		shootHeldTick = 0;
+	}
+}
+
+function PullArrowLogic(_arrowObjectIndex, _heldInputEnum, _releasedInputEnum)
+{
+	//Pull shot arrow to player.
+	if(GetInput(_heldInputEnum))
+	{
+		if(instance_exists(_arrowObjectIndex))
+		{
+			with(_arrowObjectIndex)
+				Pull();
+		}
+	}
+	
+	//Cancel pull.
+	if(GetInput(_releasedInputEnum))
+	{
+		if(instance_exists(_arrowObjectIndex))
+		{
+			with(_arrowObjectIndex)
+				CancelPull();
+		}
 	}
 }
 

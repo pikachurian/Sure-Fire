@@ -29,6 +29,9 @@ switch(state)
 		if(ds_list_size(shotArrows) < arrowsMax)
 		{
 			ShootArrowLogic();
+		}else
+		{
+			PullArrowLogic(obj_basic_arrow, INPUT.shoot, INPUT.shootReleased);
 		}
 		
 		//Fire movable arrow.
@@ -43,6 +46,9 @@ switch(state)
 				if(dir == -1)
 					movableArrowInstance.SetDirection(180);
 			}
+		}else if(movableArrowInstance != noone) && (movableArrowUnlocked == true)
+		{
+			PullArrowLogic(obj_movable_arrow, INPUT.special, INPUT.specialReleased);
 		}
 	
 		MoveAndSlide();

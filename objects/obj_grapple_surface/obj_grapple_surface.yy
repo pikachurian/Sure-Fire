@@ -30,5 +30,5 @@
     "path": "sprites/spr_grapple_surface/spr_grapple_surface.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

@@ -43,7 +43,9 @@ saveData =
 	{
 		spd : 4,
 		hp : 20,
-		hpMax : 20
+		hpMax : 20,
+		sprite : "spr_drone",
+		gunSprite : "spr_drone_gun"
 	}
 }
 
@@ -68,12 +70,13 @@ function Load()
 		buffer_delete(_buffer);
 	
 		var _loadData = json_parse(_string);
+		saveData = _loadData;
 		//Load data.
-		obj_player.LoadData(_loadData.player);
+		/*obj_player.LoadData(_loadData.player);
 		if(instance_exists(obj_movable_arrow))
 			obj_movable_arrow.LoadData(saveData.movableArrow);
 		if(instance_exists(obj_basic_arrow))
-			obj_basic_arrow.LoadData(saveData.basicArrow);
+			obj_basic_arrow.LoadData(saveData.basicArrow);*/
 		
 		show_debug_message("Game Loaded: " + _string);
 	
@@ -82,7 +85,9 @@ function Load()
 	return false;
 }
 
-/*if(Load() == false)
+if(Load() == false)
 {
 	Save();
-}*/
+}
+
+

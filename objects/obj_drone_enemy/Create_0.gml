@@ -1,6 +1,6 @@
 event_inherited();
 
-state = ES.setRoamGoal;
+state = ES.setup;//ES.setRoamGoal;
 spd = 4;
 
 goalMinDistance = 64;//32;
@@ -43,10 +43,24 @@ waypointID = 0;
 
 distanceToFloor = 240;
 
-walkSprite = spr_enemy_beta;
-idleSprite = spr_enemy_beta;
-hurtSprite = spr_enemy_beta;
-deadSprite = spr_enemy_beta;
+walkSprite = spr_drone;//spr_enemy_beta;
+idleSprite = spr_drone;//spr_enemy_beta;
+hurtSprite = spr_drone;//spr_enemy_beta;
+deadSprite = spr_drone;//spr_enemy_beta;
+gunSprite = spr_drone_gun;
+
+function LoadData(_struct)
+{
+	walkSprite = GetSprite(_struct.sprite);
+	idleSprite = GetSprite(_struct.sprite);
+	hurtSprite = GetSprite(_struct.sprite);
+	hurtSprite = GetSprite(_struct.sprite);
+	gunSprite = GetSprite(_struct.gunSprite);
+	
+	spd = _struct.spd;
+	hp = _struct.hp;
+	hpMax = _struct.hpMax;
+}
 
 function Hover()
 {

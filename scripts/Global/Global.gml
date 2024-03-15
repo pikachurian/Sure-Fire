@@ -22,7 +22,8 @@ enum ES
 	roam,
 	wait,
 	chasePlayer,
-	dead
+	dead,
+	setup
 }
 
 global.playerStartX = -1;

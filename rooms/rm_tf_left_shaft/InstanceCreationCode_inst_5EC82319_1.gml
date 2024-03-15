@@ -1,4 +1,4 @@
 transitionDir = DIR.left;
-nextRoom = rm_arrow_test;
-startX = -1;
-startY = -1;
+nextRoom = rm_tf_drone_room;
+startX = 244;
+startY = 890;

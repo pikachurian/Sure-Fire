@@ -33,5 +33,5 @@
     "path": "sprites/spr_enemy_waypoint/spr_enemy_waypoint.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

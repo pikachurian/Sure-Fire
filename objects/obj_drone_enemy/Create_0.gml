@@ -1,7 +1,7 @@
 event_inherited();
 
 state = ES.setRoamGoal;
-spd = 10;
+spd = 4;
 
 goalMinDistance = 64;//32;
 goalMaxDistance = 176;//128;
@@ -12,8 +12,8 @@ setGoalAttemptsMax = 10;
 
 waitTick = 0;
 waitTime = 1 * game_get_speed(gamespeed_fps);
-waitTimeMin = 1 * game_get_speed(gamespeed_fps);
-waitTimeMax = 2 * game_get_speed(gamespeed_fps);
+waitTimeMin = 1;//0.5 * game_get_speed(gamespeed_fps);
+waitTimeMax = 2;//1.5 * game_get_speed(gamespeed_fps);
 waitNextState = ES.setRoamGoal;
 
 lastX = x;
@@ -22,7 +22,7 @@ lastY = y;
 stuckTick = 0;
 stuckTime = game_get_speed(gamespeed_fps) * 1;
 
-detectPlayerRange = 1600;
+detectPlayerRange = 720;
 
 //The enemy will stop if its distance to the player is under or equal to this range.
 minPlayerRange = 480;
@@ -55,12 +55,13 @@ function Hover()
 	{
 		if(WallAt(x, y + _i, id))
 		{
-			_pixelsAboveGround = _i - 1;
+			_pixelsAboveGround = _i;
 			break;
 		}
 	}
 	
-	y = lerp(y, y - _pixelsAboveGround, 0.02);
+	if(_pixelsAboveGround != 0)
+		y = lerp(y, y - (distanceToFloor - _pixelsAboveGround), 0.2);
 }
 
 function UpdateWaypoints()
@@ -70,7 +71,7 @@ function UpdateWaypoints()
 		with(obj_enemy_waypoint)
 		{
 			if(waypointID == other.waypointID)
-				ds_list_add(other.waypoints, waypointID);
+				ds_list_add(other.waypoints, id);
 		}
 	}
 }
@@ -89,10 +90,16 @@ function GotoWaypoint(_index)
 	}
 }
 
-//Sets goal to current waypoint index, then increments that index.
+//Increments that index, then sets goal to current waypoint index.
 function GotoNextWaypoint()
 {
+	IncrementWaypointIndex();
+		
 	GotoWaypoint(waypointOn);
+}
+
+function IncrementWaypointIndex()
+{
 	waypointOn += 1;
 	if(waypointOn >= ds_list_size(waypoints))
 		waypointOn = 0;
@@ -185,6 +192,7 @@ function UpdateSprite()
 function Die()
 {
 	sprite_index = deadSprite;
+	image_alpha = 0.2;
 	ChangeState(ES.dead);
 }
 
@@ -232,6 +240,7 @@ function CheckBulletHit()
 					AddForce(_forceX, _forceY);
 				
 					_bullets[|_i].Destroy();
+					_bullets[|_i].unstuck = true;
 				
 					break;
 				}

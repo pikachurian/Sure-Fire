@@ -5,7 +5,8 @@ UpdateForce();
 switch(state)
 {
 	case ES.setRoamGoal:
-		GotoNextWaypoint();
+		UpdateWaypoints();
+		GotoWaypoint(waypointOn);
 		ChangeState(ES.roam);
 		
 		DetectPlayer();
@@ -15,9 +16,10 @@ switch(state)
 		MoveTowardsPoint(goalX, goalY);
 		
 		//Quit movement if reached goal.
-		if(point_distance(x, y, goalX, goalY) <= 32)
+		if(point_distance(x, y, goalX, goalY) <= 4)
 		{
 			Wait(ES.setRoamGoal, random_range(waitTimeMin, waitTimeMax));
+			IncrementWaypointIndex();
 			break;
 		}
 			

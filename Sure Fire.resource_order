@@ -18,11 +18,11 @@
     {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
+    {"name":"Enemy","order":22,"path":"folders/Sprites/Enemy.yy",},
+    {"name":"Drone Enemy","order":1,"path":"folders/Sprites/Enemy/Drone Enemy.yy",},
     {"name":"Pick Ups","order":21,"path":"folders/Sprites/Pick Ups.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"Enemy","order":22,"path":"folders/Sprites/Enemy.yy",},
-    {"name":"Drone Enemy","order":1,"path":"folders/Sprites/Enemy/Drone Enemy.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_movable_arrow","order":5,"path":"sprites/spr_movable_arrow/spr_movable_arrow.yy",},

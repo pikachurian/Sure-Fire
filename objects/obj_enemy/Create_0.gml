@@ -96,6 +96,8 @@ function CheckBulletHit()
 					AddForce(_forceX, _forceY);
 				
 					_bullets[|_i].Destroy();
+					_bullets[|_i].unstuck = true;
+
 				
 					break;
 				}

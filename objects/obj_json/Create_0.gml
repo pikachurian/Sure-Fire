@@ -37,6 +37,13 @@ saveData =
 		bulletSprite : spr_arrow,
 		wallCollisionSprite : spr_arrow,
 		explodeSprite : spr_arrow
+	},
+	
+	droneEnemy :
+	{
+		spd : 4,
+		hp : 20,
+		hpMax : 20
 	}
 }
 

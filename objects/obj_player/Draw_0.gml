@@ -1,7 +1,7 @@
 draw_self();
 
 //Draw health bar.
-/*DrawBar(
+DrawBar(
 	(hp / hpMax),
 	x - 128,
 	y - 128,
@@ -10,4 +10,4 @@ draw_self();
 	4,
 	c_green,
 	c_grey
-);*/
+);

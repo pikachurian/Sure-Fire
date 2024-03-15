@@ -1,8 +1,8 @@
-CheckBulletHit();
+/*CheckBulletHit();
 UpdateSprite();
 UpdateForce();
 
-/*switch(state)
+switch(state)
 {
 	case ES.setRoamGoal:
 		SetNewRandomGoal();
@@ -57,7 +57,7 @@ UpdateForce();
 		
 		UpdateShootAndAim();
 		break;
-}*/
+}
 
 lastX = x;
 lastY = y;

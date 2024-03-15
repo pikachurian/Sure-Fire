@@ -1,17 +1,7 @@
 event_inherited();
 
-//Enemy State.
-enum ES 
-{
-	setRoamGoal,
-	roam,
-	wait,
-	chasePlayer,
-	dead
-}
-
 state = ES.setRoamGoal;
-spd = 1;
+spd = 10;
 
 goalMinDistance = 64;//32;
 goalMaxDistance = 176;//128;
@@ -32,10 +22,11 @@ lastY = y;
 stuckTick = 0;
 stuckTime = game_get_speed(gamespeed_fps) * 1;
 
-detectPlayerRange = 256;
+detectPlayerRange = 1600;
 
 //The enemy will stop if its distance to the player is under or equal to this range.
-minPlayerRange = 64;
+minPlayerRange = 480;
+fleePlayerRange = 240;
 
 shootTime = game_get_speed(gamespeed_fps) * 3; //1;
 shootTick = 0;
@@ -46,10 +37,66 @@ bulletSpeed = 2;
 hp = 20;
 hpMax = 20;
 
+waypoints = ds_list_create();
+waypointOn = 0;
+waypointID = 0;
+
+distanceToFloor = 240;
+
 walkSprite = spr_enemy_beta;
 idleSprite = spr_enemy_beta;
 hurtSprite = spr_enemy_beta;
 deadSprite = spr_enemy_beta;
+
+function Hover()
+{
+	var _pixelsAboveGround = 0;
+	for(var _i = 0; _i < distanceToFloor; _i ++)
+	{
+		if(WallAt(x, y + _i, id))
+		{
+			_pixelsAboveGround = _i - 1;
+			break;
+		}
+	}
+	
+	y = lerp(y, y - _pixelsAboveGround, 0.02);
+}
+
+function UpdateWaypoints()
+{
+	if(instance_exists(obj_enemy_waypoint))
+	{
+		with(obj_enemy_waypoint)
+		{
+			if(waypointID == other.waypointID)
+				ds_list_add(other.waypoints, waypointID);
+		}
+	}
+}
+
+function GotoWaypoint(_index)
+{
+	waypointOn = _index;
+	if(_index < ds_list_size(waypoints))
+	{
+		goalX = waypoints[|_index].x;
+		goalY = waypoints[|_index].y;
+	}else
+	{
+		goalX = x;
+		goalY = y;
+	}
+}
+
+//Sets goal to current waypoint index, then increments that index.
+function GotoNextWaypoint()
+{
+	GotoWaypoint(waypointOn);
+	waypointOn += 1;
+	if(waypointOn >= ds_list_size(waypoints))
+		waypointOn = 0;
+}
 
 function SetNewRandomGoal()
 {
@@ -100,7 +147,7 @@ function ChangeState(_state)
 
 function MoveTowardsPoint(_x, _y)
 {
-	//mp_potential_step(_x, _y, spd, false);
+	mp_potential_step(_x, _y, spd, false);
 }
 
 function Wait(_nextState, _time)

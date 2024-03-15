@@ -15,6 +15,16 @@ enum DIR
 	down
 }
 
+//Enemy State.
+enum ES 
+{
+	setRoamGoal,
+	roam,
+	wait,
+	chasePlayer,
+	dead
+}
+
 global.playerStartX = -1;
 global.playerStartY = -1;
 
@@ -75,4 +85,20 @@ function RoomGotoTransition(_room, _transitionDirection, _time = -1)
 		if(_time > 0)
 			time = _time;
 	}
+}
+
+//Check if checking instance would collide with a wall (solid object).
+//Closed doors count as walls.
+function WallAt(_x, _y, _checkingInstance)
+{
+	with(_checkingInstance)
+	{
+		if(place_meeting(_x, _y, obj_wall))
+			return true;
+			
+		var _door = instance_place(_x, _y, obj_door);
+		if(_door != noone) && (_door.opened == false)
+			return true;
+	}
+	return false;
 }

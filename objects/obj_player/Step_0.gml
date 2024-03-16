@@ -18,7 +18,7 @@ switch(state)
 		if(grappleUnlocked == true)
 		{
 			CheckGrappleSurface();
-			if(GetInput(INPUT.grapplePressed)) && (IsGrounded())
+			if(GetInput(INPUT.grapplePressed)) && (IsGrounded()) && (point_distance(x, y, grappleTargetInstance.x, grappleTargetInstance.y) <= grappleRange)
 			{
 				if(grappleTargetInstance.canGrapple == true) && (grappleTargetInstance.y < y)
 					ChangeState(PS.grappling);	

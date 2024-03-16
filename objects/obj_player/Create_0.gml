@@ -20,7 +20,7 @@ shootAngle = 0;
 shootHeldTick = 0;
 shootHeldTime = 0.15 * game_get_speed(gamespeed_fps);
 
-grappleRange = 1000;//500;
+grappleRange = 720;//500;
 grappleSpd = 50;
 grappleTargetInstance = instance_create_depth(-1000, -1000, depth - 20, obj_grapple_target);
 
@@ -37,8 +37,8 @@ idleSprite = spr_player;//spr_player_idle;
 hurtSprite = spr_player;//spr_player_hurt;
 deadSprite = spr_player;//spr_player_dead;
 
-grappleUnlocked = true;//false;
-movableArrowUnlocked = true;//false;
+grappleUnlocked = false;//false;
+movableArrowUnlocked = false;//false;
 
 //Player State.
 enum PS 
@@ -162,11 +162,39 @@ function CheckGrappleSurface()
 {
 	if(instance_exists(obj_grapple_surface))
 	{
-		var _inst = instance_nearest(x, y, obj_grapple_surface);
+		/*var _inst = instance_nearest(x, y, obj_grapple_surface);
 		if(point_distance(x, y, _inst.x, _inst.y) <= grappleRange)
 			grappleTargetInstance.SetTarget(_inst.x, _inst.y);
 		else
-			grappleTargetInstance.CancelTarget();
+			grappleTargetInstance.CancelTarget();*/
+		var _surfaces = ds_priority_create();
+		for(var _i = 0; _i < instance_number(obj_grapple_surface); _i ++)
+		{
+			var _inst = instance_find(obj_grapple_surface, _i);
+			if(_inst != noone)
+			{
+				var _distance = point_distance(x, y, _inst.x, _inst.y);
+				if(_distance <= grappleRange)
+					ds_priority_add(_surfaces, _inst, _distance);
+			}
+		}
+		
+		if(!ds_priority_empty(_surfaces))
+		{
+			for(var _i = 0; _i < instance_number(obj_grapple_surface); _i ++)
+			{
+				var _surf = ds_priority_delete_min(_surfaces);
+				if(_surf.y < y)
+				{
+					grappleTargetInstance.SetTarget(_surf.x, _surf.y);
+					ds_priority_destroy(_surfaces);
+					return true;
+				}
+			}
+		}
+		grappleTargetInstance.CancelTarget();
+		ds_priority_destroy(_surfaces);
+		return false
 	}else
 	{
 		grappleTargetInstance.CancelTarget();

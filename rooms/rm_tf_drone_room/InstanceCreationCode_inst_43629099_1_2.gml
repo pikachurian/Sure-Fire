@@ -1,4 +1,4 @@
 transitionDir = DIR.left;
-nextRoom = rm_arrow_test;
-startX = 290;
-startY = 1433;
+nextRoom = rm_tf_grapple_pickup;
+startX = 224;
+startY = 1414;

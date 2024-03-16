@@ -1,6 +1,6 @@
 event_inherited();
 
-rotateSpd = 1.5;//1;
+rotateSpd = 2;//1.5;//1;
 spd = 10;
 
 bulletTarget = BT.noone;

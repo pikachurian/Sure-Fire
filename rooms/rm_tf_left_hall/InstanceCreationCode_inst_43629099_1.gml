@@ -1,4 +1,4 @@
 transitionDir = DIR.left;
-nextRoom = rm_arrow_test;
+nextRoom = rm_start;
 startX = 290;
 startY = 1433;

@@ -13,6 +13,7 @@
     {"name":"Paths","order":4,"path":"folders/Paths.yy",},
     {"name":"Rooms","order":10,"path":"folders/Rooms.yy",},
     {"name":"Top Floor","order":4,"path":"folders/Rooms/Top Floor.yy",},
+    {"name":"To RC","order":7,"path":"folders/Rooms/Top Floor/To RC.yy",},
     {"name":"Scripts","order":5,"path":"folders/Scripts.yy",},
     {"name":"Sequences","order":11,"path":"folders/Sequences.yy",},
     {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
@@ -23,7 +24,7 @@
     {"name":"Pick Ups","order":21,"path":"folders/Sprites/Pick Ups.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"To RC","order":7,"path":"folders/Rooms/Top Floor/To RC.yy",},
+    {"name":"Player","order":23,"path":"folders/Sprites/Player.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_movable_arrow","order":5,"path":"sprites/spr_movable_arrow/spr_movable_arrow.yy",},

@@ -32,10 +32,11 @@ arrowsMax = 1;//3;
 canShootArrow = true;
 //canShootMovableArrow = true;
 
-walkSprite = spr_player;//spr_player_walk;
-idleSprite = spr_player;//spr_player_idle;
-hurtSprite = spr_player;//spr_player_hurt;
-deadSprite = spr_player;//spr_player_dead;
+walkSprite = spr_player_walking;//spr_player;//spr_player_walk;
+idleSprite = spr_player_idle;//spr_player_idle;
+hurtSprite = spr_player_idle;//spr_player_hurt;
+deadSprite = spr_player_idle;//spr_player_dead;
+collisionSprite = spr_player_collision;
 
 grappleUnlocked = false;//false;
 movableArrowUnlocked = false;//false;
@@ -146,16 +147,17 @@ function PullArrowLogic(_arrowObjectIndex, _heldInputEnum, _releasedInputEnum)
 
 function UpdateSprite()
 {
-	if(sprite_index == hurtSprite) ||
+	/*if(sprite_index == hurtSprite) ||
 	(sprite_index == deadSprite)
-		return;
+		return;*/
 		
 	//Face direction.
-	//image_xscale = dir;
+	image_xscale = dir;
 		
-	sprite_index = idleSprite;
 	if(hspd != 0) || (vspd != 0)
 		sprite_index = walkSprite;
+	else
+		sprite_index = idleSprite;
 }
 
 function CheckGrappleSurface()
@@ -229,6 +231,7 @@ function ChangeState(_state)
 {
 	state = _state;
 }
+
 
 //if(instance_exists(obj_json))
 //	LoadData(obj_json.saveData.player);

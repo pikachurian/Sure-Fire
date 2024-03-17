@@ -52,15 +52,21 @@ switch(state)
 		{
 			PullArrowLogic(obj_movable_arrow, INPUT.special, INPUT.specialReleased);
 		}
-	
+		
+		var _sprite = sprite_index;
+		var _imageIndex = image_index;
+		sprite_index = collisionSprite;
 		MoveAndSlide();
 		CheckBulletHit();
 		UpdateForce();
+		sprite_index = _sprite;
+		image_index = _imageIndex;
 			
 		UpdateSprite();
 		
 		//For some unholy reason this code only works outside of UpdateSprite.
-		image_xscale = dir;
+		//image_xscale = dir;
+		//The unholy reason was the dead and hurt sprite being the same as the idle and walk sprites.
 		break;
 		
 	case PS.controlMovableArrow:

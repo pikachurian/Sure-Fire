@@ -86,6 +86,9 @@ switch(state)
 		x += lengthdir_x(grappleSpd, _dir);
 		y += lengthdir_y(grappleSpd, _dir);
 		
+		var _sprite = sprite_index;
+		var _imageIndex = image_index;
+		sprite_index = collisionSprite;
 		if(place_meeting(x, y, obj_wall)) && (place_meeting(x, y, obj_grapple_surface))
 		{
 			while(place_meeting(x, y, obj_wall))
@@ -93,6 +96,9 @@ switch(state)
 				
 			ChangeState(PS.main);
 		}
+		
+		sprite_index = _sprite;
+		image_index = _imageIndex;
 		break;
 }
 

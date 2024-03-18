@@ -4,6 +4,7 @@
   "name": "obj_basic_trigger",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -31,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_basic_trigger_beta",
-    "path": "sprites/spr_basic_trigger_beta/spr_basic_trigger_beta.yy",
+    "name": "spr_basic_trigger",
+    "path": "sprites/spr_basic_trigger/spr_basic_trigger.yy",
   },
   "spriteMaskId": null,
   "visible": true,

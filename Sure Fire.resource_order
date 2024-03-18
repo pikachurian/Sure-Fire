@@ -25,6 +25,7 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
     {"name":"Player","order":23,"path":"folders/Sprites/Player.yy",},
+    {"name":"Targets","order":24,"path":"folders/Sprites/Targets.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_movable_arrow_delta","order":5,"path":"sprites/spr_movable_arrow_delta/spr_movable_arrow_delta.yy",},

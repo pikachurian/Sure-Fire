@@ -110,6 +110,29 @@ function Load(_fileName)
 	return noone;
 }
 
+function LoadSave()
+{
+	saveData = Load(saveFileName);
+	show_debug_message("AAAAAAAA "+string(saveData))
+	room_goto(saveData.theRoom);
+	obj_player.LoadSaveStruct(saveData.player);
+	obj_game_master.LoadSaveStruct(saveData.checkPoint);
+	//show_debug_message("ABABABA")
+}
+
+function SaveSave()
+{
+	saveData.checkPoint = obj_game_master.checkPointData;
+	saveData.player.grappleUnlocked = obj_player.grappleUnlocked;
+	saveData.player.movableArrowUnlocked = obj_player.movableArrowUnlocked;
+	saveData.player.hp = obj_player.hp;
+	saveData.player.x = obj_player.x;
+	saveData.player.y = obj_player.y;
+	saveData.theRoom = room;
+
+	Save(saveData, saveFileName);
+}
+
 /*if(Load() == false)
 {
 	Save();
@@ -118,5 +141,5 @@ function Load(_fileName)
 //Load save.
 if(file_exists(saveFileName))
 {
-	saveData = Load(saveFileName);
+	//LoadSave();
 }else Save(saveData, saveFileName);

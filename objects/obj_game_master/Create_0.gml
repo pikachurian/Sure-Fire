@@ -1,14 +1,38 @@
-checkPointInst = noone;
-checkPointX = 0;
-checkPointY = 0;
-checkPointRoom = noone;
+creationRoom = room;
+
+checkPointData = 
+{
+	inst : noone,
+	x : 0,
+	y : 0,
+	theRoom : noone
+}
+
+//Game State.
+enum GS 
+{
+	setup,
+	main
+}
+
+state = GS.setup;
 
 function LoadCheckPoint()
 {
-	if(checkPointRoom != noone)
+	if(checkPointData.theRoom != noone)
 	{
-		room_goto(checkPointRoom);
-		obj_player.x = checkPointX;
-		obj_player.y = checkPointY;
+		room_goto(checkPointData.theRoom);
+		obj_player.x = checkPointData.x;
+		obj_player.y = checkPointData.y;
 	}
+}
+
+function LoadSaveStruct(_struct)
+{
+	checkPointData = _struct;
+}
+
+function ChangeState(_state)
+{
+	state = _state;
 }

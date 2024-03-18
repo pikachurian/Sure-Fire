@@ -6,3 +6,11 @@ if(keyboard_check_pressed(vk_f4))
 	
 if(keyboard_check_pressed(ord("L")))
 	LoadCheckPoint();
+	
+switch(state)
+{
+	case GS.setup:
+		obj_json.LoadSave();
+		ChangeState(GS.main);
+		break;
+}

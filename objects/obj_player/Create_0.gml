@@ -293,7 +293,14 @@ function ChangeState(_state)
 }
 
 
-
+function LoadSaveStruct(_struct)
+{
+	x = _struct.x;
+	y = _struct.y;
+	hp = _struct.hp;
+	movableArrowUnlocked = _struct.movableArrowUnlocked;
+	grappleUnlocked = _struct.grappleUnlocked;
+}
 
 //if(instance_exists(obj_json))
 //	LoadData(obj_json.saveData.player);

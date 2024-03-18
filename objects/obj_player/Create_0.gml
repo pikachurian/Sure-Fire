@@ -224,6 +224,7 @@ function CheckGrappleSurface()
 		else
 			grappleTargetInstance.CancelTarget();*/
 		var _surfaces = ds_priority_create();
+		/*
 		for(var _i = 0; _i < instance_number(obj_grapple_surface); _i ++)
 		{
 			var _inst = instance_find(obj_grapple_surface, _i);
@@ -233,20 +234,24 @@ function CheckGrappleSurface()
 				if(_distance <= grappleRange)
 					ds_priority_add(_surfaces, _inst, _distance);
 			}
+		}*/
+		with(obj_grapple_surface)
+		{
+			if(y < other.y + 64)
+			{
+				var _distance = point_distance(other.x, other.y, x, y);
+				if(_distance <= other.grappleRange)
+					ds_priority_add(_surfaces, id, _distance);
+			}
 		}
 		
 		if(!ds_priority_empty(_surfaces))
 		{
-			for(var _i = 0; _i < instance_number(obj_grapple_surface); _i ++)
-			{
-				var _surf = ds_priority_delete_min(_surfaces);
-				if(_surf.y < y)
-				{
-					grappleTargetInstance.SetTarget(_surf.x, _surf.y);
-					ds_priority_destroy(_surfaces);
-					return true;
-				}
-			}
+
+			var _surf = ds_priority_delete_min(_surfaces);
+			grappleTargetInstance.SetTarget(_surf.x, _surf.y);
+			ds_priority_destroy(_surfaces);
+			return true;
 		}
 		grappleTargetInstance.CancelTarget();
 		ds_priority_destroy(_surfaces);
@@ -254,6 +259,7 @@ function CheckGrappleSurface()
 	}else
 	{
 		grappleTargetInstance.CancelTarget();
+		return false;
 	}
 }
 

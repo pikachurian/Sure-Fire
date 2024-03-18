@@ -20,13 +20,14 @@ switch(state)
 		if(grappleUnlocked == true)
 		{
 			CheckGrappleSurface();
-			if(GetInput(INPUT.grapplePressed)) && (isGrounded == true) && (point_distance(x, y, grappleTargetInstance.x, grappleTargetInstance.y) <= grappleRange)
-			{
-				//Play sound.
-				grappleSFXID = audio_play_sound(grappleSFX, 10, false);
-				
-				if(grappleTargetInstance.canGrapple == true) && (grappleTargetInstance.y < y)
+			if(GetInput(INPUT.grapplePressed)) && (isGrounded == true)
+			{				
+				if(grappleTargetInstance.canGrapple == true)
+				{
 					ChangeState(PS.grappling);	
+					//Play sound.
+					grappleSFXID = audio_play_sound(grappleSFX, 10, false);
+				}
 			}
 		}
 		

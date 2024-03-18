@@ -10,7 +10,7 @@ fric = 0.5;
 //bulletDamage = 10;
 //bulletSpeed = 4;//5;
 
-spd = 10;
+spd = 12;//10;
 jumpSpd = 24;
 
 //1 = right, -1 = left.
@@ -45,6 +45,17 @@ deadSprite = spr_player_idle;//spr_player_dead;
 chargingArrowSprite = spr_player_charging;
 collisionSprite = spr_player_collision;
 arrowAimingSprite = spr_arrow_aiming;
+
+shootSFX = sfx_arrow_shoot;
+grappleSFX = sfx_grapple;
+stepSFX = sfx_step;
+
+grappleSFXID = noone;
+stepSFXID = noone;
+stepSFXTime = 0.3 * game_get_speed(gamespeed_fps);
+stepSFXTick = 0;
+stepSFXMinPitch = 0.5;
+stepSFXMaxPitch = 1.5;
 
 grappleUnlocked = true;//false;
 movableArrowUnlocked = true;//false;

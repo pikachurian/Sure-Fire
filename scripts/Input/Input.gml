@@ -10,6 +10,8 @@ enum INPUT
 	right,
 	up,
 	down,
+	leftPressed,
+	rightPressed,
 	horizontalAxis,
 	verticalAxis,
 	shootPressed,
@@ -45,6 +47,14 @@ function GetInput(_inputEnum)
 			
 		case INPUT.down:
 			_input = keyboard_check(ord("S"));
+			break;
+			
+		case INPUT.leftPressed:
+			_input = keyboard_check_pressed(ord("A"));
+			break;
+			
+		case INPUT.rightPressed:
+			_input = keyboard_check_pressed(ord("D"));
 			break;
 			
 		case INPUT.jumpPressed:

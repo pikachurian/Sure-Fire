@@ -29,10 +29,12 @@
   "ResourceOrderSettings": [
     {"name":"spr_movable_arrow_delta","order":5,"path":"sprites/spr_movable_arrow_delta/spr_movable_arrow_delta.yy",},
     {"name":"rm_test_0","order":2,"path":"rooms/rm_test_0/rm_test_0.yy",},
+    {"name":"sfx_grapple","order":1,"path":"sounds/sfx_grapple/sfx_grapple.yy",},
     {"name":"rm_tf_movable_pickup","order":2,"path":"rooms/rm_tf_movable_pickup/rm_tf_movable_pickup.yy",},
     {"name":"obj_json","order":7,"path":"objects/obj_json/obj_json.yy",},
     {"name":"spr_drone_gun","order":2,"path":"sprites/spr_drone_gun/spr_drone_gun.yy",},
     {"name":"obj_actor","order":1,"path":"objects/obj_actor/obj_actor.yy",},
+    {"name":"sfx_arrow_shoot","order":2,"path":"sounds/sfx_arrow_shoot/sfx_arrow_shoot.yy",},
     {"name":"spr_grapple_target_delta","order":11,"path":"sprites/spr_grapple_target_delta/spr_grapple_target_delta.yy",},
     {"name":"spr_door_beta","order":18,"path":"sprites/spr_door_beta/spr_door_beta.yy",},
     {"name":"obj_drone_enemy","order":1,"path":"objects/obj_drone_enemy/obj_drone_enemy.yy",},

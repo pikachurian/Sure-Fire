@@ -20,6 +20,9 @@ switch(state)
 			CheckGrappleSurface();
 			if(GetInput(INPUT.grapplePressed)) && (IsGrounded()) && (point_distance(x, y, grappleTargetInstance.x, grappleTargetInstance.y) <= grappleRange)
 			{
+				//Play sound.
+				grappleSFXID = audio_play_sound(grappleSFX, 10, false);
+				
 				if(grappleTargetInstance.canGrapple == true) && (grappleTargetInstance.y < y)
 					ChangeState(PS.grappling);	
 			}
@@ -74,6 +77,24 @@ switch(state)
 			
 		UpdateSprite();
 		
+		//Walking sound effects.
+		if(GetInput(INPUT.leftPressed)) || (GetInput(INPUT.rightPressed))
+		{
+			stepSFXTick = 0;
+			var _pitch = random_range(stepSFXMinPitch, stepSFXMaxPitch);
+			audio_play_sound(stepSFX, 8, false, 1, 0, _pitch);
+		}
+		
+		if(GetInput(INPUT.horizontalAxis) != 0)
+		{
+			if(stepSFXTick >= stepSFXTime)
+			{
+				stepSFXTick = 0;
+				var _pitch = random_range(stepSFXMinPitch, stepSFXMaxPitch);
+				audio_play_sound(stepSFX, 8, false, 1, 0, _pitch);
+			}else stepSFXTick += 1;
+		}
+		
 		//For some unholy reason this code only works outside of UpdateSprite.
 		//image_xscale = dir;
 		//The unholy reason was the dead and hurt sprite being the same as the idle and walk sprites.
@@ -97,6 +118,9 @@ switch(state)
 				_arrowInstance.SetArrowStrength(shootStrength);
 				ds_list_add(shotArrows, _arrowInstance);
 				obj_camera.shakeStrength = 10;
+				
+				//Play sound.
+				audio_play_sound(shootSFX, 10, false);
 			}
 			image_speed = 1;
 			shootStrength = 0;
@@ -128,6 +152,8 @@ switch(state)
 		{
 			while(place_meeting(x, y, obj_wall))
 				y -= 1;
+				
+			audio_stop_sound(grappleSFXID);
 				
 			ChangeState(PS.main);
 		}

@@ -7,9 +7,9 @@ enum BT
 }
 
 bulletTarget = BT.noone;
-bulletSprite = spr_arrow;
-wallCollisionSprite = spr_arrow;//spr_bullet_wall_collision;
-explodeSprite = spr_arrow;//spr_enemy_bullet_explode;
+bulletSprite = spr_arrow_delta;
+wallCollisionSprite = spr_arrow_delta;//spr_bullet_wall_collision;
+explodeSprite = spr_arrow_delta;//spr_enemy_bullet_explode;
 
 //360 degrees
 dir = 0;

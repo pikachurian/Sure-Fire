@@ -38,8 +38,8 @@ hurtSprite = spr_player_idle;//spr_player_hurt;
 deadSprite = spr_player_idle;//spr_player_dead;
 collisionSprite = spr_player_collision;
 
-grappleUnlocked = false;//false;
-movableArrowUnlocked = false;//false;
+grappleUnlocked = true;//false;
+movableArrowUnlocked = true;//false;
 
 //Player State.
 enum PS 

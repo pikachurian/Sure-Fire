@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_arrow",
-    "path": "sprites/spr_arrow/spr_arrow.yy",
+    "name": "spr_arrow_delta",
+    "path": "sprites/spr_arrow_delta/spr_arrow_delta.yy",
   },
   "spriteMaskId": null,
   "visible": true,

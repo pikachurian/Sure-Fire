@@ -34,8 +34,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_movable_arrow",
-    "path": "sprites/spr_movable_arrow/spr_movable_arrow.yy",
+    "name": "spr_movable_arrow_delta",
+    "path": "sprites/spr_movable_arrow_delta/spr_movable_arrow_delta.yy",
   },
   "spriteMaskId": null,
   "visible": true,

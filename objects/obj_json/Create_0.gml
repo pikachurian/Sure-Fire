@@ -23,9 +23,9 @@ saveData =
 		rotateGrav : 0.5,
 
 		bulletTarget : BT.enemy,
-		bulletSprite : spr_arrow,
-		wallCollisionSprite : spr_arrow,
-		explodeSprite : spr_arrow
+		bulletSprite : spr_arrow_delta,
+		wallCollisionSprite : spr_arrow_delta,
+		explodeSprite : spr_arrow_delta
 	},
 	
 	movableArrow : 
@@ -34,9 +34,9 @@ saveData =
 		spd : 10,
 		
 		bulletTarget : BT.enemy,
-		bulletSprite : spr_arrow,
-		wallCollisionSprite : spr_arrow,
-		explodeSprite : spr_arrow
+		bulletSprite : spr_arrow_delta,
+		wallCollisionSprite : spr_arrow_delta,
+		explodeSprite : spr_arrow_delta
 	},
 	
 	droneEnemy :

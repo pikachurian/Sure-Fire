@@ -5,7 +5,7 @@ if(active)
 		UpdateRotateGravity();
 	
 	//Update rotation using velocity.
-	SetDirection(image_angle + rotateVelocity);
+	//SetDirection(image_angle + rotateVelocity);
 	
 	//Homing.
 	#region Homing
@@ -52,7 +52,7 @@ if(active)
 				if(_canHit == true)
 				{
 					var _targetDir = point_direction(x, y, _inst.x, _inst.y);
-					//var _newDir = Approach(image_angle, _targetDir, homingSpd);//lerp(image_angle, _targetDir, 0.2);
+					/*//var _newDir = Approach(image_angle, _targetDir, homingSpd);//lerp(image_angle, _targetDir, 0.2);
 					var _facingMinusTarget = image_angle - _targetDir
 					var _angleDifference = _facingMinusTarget;
 					
@@ -68,9 +68,9 @@ if(active)
 					if(_angleDifference > 0)
 						_newDir -= homingSpd;
 					else
-						_newDir += homingSpd;
+						_newDir += homingSpd;*/
 					
-					SetDirection(_newDir);
+					SetDirection(RotateTowards(image_angle, _targetDir, homingSpd));
 				}
 			}
 		

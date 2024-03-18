@@ -1,12 +1,20 @@
 event_inherited();
 
+bowStrength = 1.5;
+bowStrengthMin = 0.5;
+bowStrengthMax = 1.5;
+
 rotateSpd = 1.5;//1;
-spd = 25;
-gravStartTime = 0.3 * game_get_speed(gamespeed_fps);
+spdMax = 40;
+spdMin = 25;
+spd = spdMax;//25;
+gravStartTimeMax = 0.3 * game_get_speed(gamespeed_fps);
+gravStartTimeMin = 0.05 * game_get_speed(gamespeed_fps);
+gravStartTime = gravStartTimeMax;//0.2 * game_get_speed(gamespeed_fps);//0.3 * game_get_speed(gamespeed_fps);
 tick = 0;
-rotateGrav = 0.01;
+rotateGrav = 0.05;//0.01;
 rotateVelocity = 0;
-rotateVelocityMax = 10;
+rotateVelocityMax = 20;//10;
 
 bulletTarget = BT.enemy;
 bulletSprite = spr_arrow;
@@ -17,7 +25,9 @@ trailSpawnTime = 0.1 * game_get_speed(gamespeed_fps);
 trailSpawnTick = 0;
 
 homingRange = 540;
-homingSpd = 0.6;
+homingSpdMin = 1;
+homingSpdMax = 2;
+homingSpd = homingSpdMax;//0.6;
 homingTargetObjects = [obj_enemy, obj_trigger];
 
 pickupRange = 128;//320;
@@ -63,7 +73,7 @@ function CancelPull()
 function UpdateRotateGravity()
 {
 	//Apply arrow gravity.
-	if(image_angle > 90) && (image_angle < 270)
+	/*if(image_angle > 90) && (image_angle < 270)
 	{
 		//Arrow facing left.	
 		rotateVelocity = min(rotateVelocity + rotateGrav, 270)
@@ -74,7 +84,9 @@ function UpdateRotateGravity()
 		//SetDirection(max(image_angle - rotateGrav, -90));
 		rotateVelocity = max(rotateVelocity - rotateGrav, -90)
 	}
-	rotateVelocity = clamp(rotateVelocity, -rotateVelocityMax, rotateVelocityMax);
+	rotateVelocity = clamp(rotateVelocity, -rotateVelocityMax, rotateVelocityMax);*/
+	rotateVelocity = min(rotateVelocity + rotateGrav, rotateVelocityMax);
+	SetDirection(RotateTowards(image_angle, 270, rotateVelocity));
 }
 
 function UpdateTrail()

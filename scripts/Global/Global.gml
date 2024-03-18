@@ -103,3 +103,29 @@ function WallAt(_x, _y, _checkingInstance)
 	}
 	return false;
 }
+
+
+function RotateTowards(_currentAngle, _targetAngle, _spd)
+{
+	//var _targetDir = point_direction(x, y, _inst.x, _inst.y);
+	//var _newDir = Approach(image_angle, _targetDir, homingSpd);//lerp(image_angle, _targetDir, 0.2);
+	var _facingMinusTarget = _currentAngle - _targetAngle;
+	var _angleDifference = _facingMinusTarget;
+					
+	if(abs(_facingMinusTarget) > 180)
+	{
+		if(_currentAngle > _targetAngle)
+			_angleDifference = -1 * ((360 - _currentAngle) + _targetAngle);
+		else
+			_angleDifference = ((360 - _targetAngle) + _currentAngle);
+	}
+			
+	var _newDir = _currentAngle;
+	if(_angleDifference > 0)
+		_newDir -= _spd;
+	else
+		_newDir += _spd;
+						
+	return _newDir
+					
+}

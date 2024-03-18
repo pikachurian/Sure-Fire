@@ -98,7 +98,7 @@ switch(state)
 				ds_list_add(shotArrows, _arrowInstance);
 				obj_camera.shakeStrength = 10;
 			}
-			
+			image_speed = 1;
 			shootStrength = 0;
 			ChangeState(PS.main);
 		}

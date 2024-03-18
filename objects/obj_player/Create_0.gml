@@ -42,7 +42,7 @@ walkSprite = spr_player_walking;//spr_player;//spr_player_walk;
 idleSprite = spr_player_idle;//spr_player_idle;
 hurtSprite = spr_player_idle;//spr_player_hurt;
 deadSprite = spr_player_idle;//spr_player_dead;
-chargingArrowSprite = spr_player_idle;
+chargingArrowSprite = spr_player_charging;
 collisionSprite = spr_player_collision;
 arrowAimingSprite = spr_arrow_aiming;
 

@@ -43,6 +43,7 @@
     {"name":"obj_basic_trigger","order":6,"path":"objects/obj_basic_trigger/obj_basic_trigger.yy",},
     {"name":"obj_enemy_waypoint","order":2,"path":"objects/obj_enemy_waypoint/obj_enemy_waypoint.yy",},
     {"name":"spr_movable_arrow","order":4,"path":"sprites/spr_movable_arrow/spr_movable_arrow.yy",},
+    {"name":"spr_player_charging","order":8,"path":"sprites/spr_player_charging/spr_player_charging.yy",},
     {"name":"spr_arrow_collision10","order":9,"path":"sprites/spr_arrow_collision10/spr_arrow_collision10.yy",},
     {"name":"obj_room_transition","order":3,"path":"objects/obj_room_transition/obj_room_transition.yy",},
     {"name":"spr_arrow_wide","order":6,"path":"sprites/spr_arrow_wide/spr_arrow_wide.yy",},

@@ -65,6 +65,7 @@
     {"id":{"name":"obj_basic_trigger","path":"objects/obj_basic_trigger/obj_basic_trigger.yy",},},
     {"id":{"name":"obj_enemy_waypoint","path":"objects/obj_enemy_waypoint/obj_enemy_waypoint.yy",},},
     {"id":{"name":"spr_movable_arrow","path":"sprites/spr_movable_arrow/spr_movable_arrow.yy",},},
+    {"id":{"name":"spr_player_charging","path":"sprites/spr_player_charging/spr_player_charging.yy",},},
     {"id":{"name":"spr_arrow_collision10","path":"sprites/spr_arrow_collision10/spr_arrow_collision10.yy",},},
     {"id":{"name":"obj_room_transition","path":"objects/obj_room_transition/obj_room_transition.yy",},},
     {"id":{"name":"spr_grapple_pickup","path":"sprites/spr_grapple_pickup/spr_grapple_pickup.yy",},},

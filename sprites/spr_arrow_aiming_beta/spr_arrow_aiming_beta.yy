@@ -1,9 +1,9 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "spr_arrow_aiming",
+  "name": "spr_arrow_aiming_beta",
   "bbox_bottom": 74,
-  "bbox_left": 175,
+  "bbox_left": 165,
   "bbox_right": 294,
   "bbox_top": 25,
   "bboxMode": 0,
@@ -20,8 +20,7 @@
   "height": 100,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f407d0e7-4580-4074-8777-b0684ea35931","blendMode":0,"displayName":"default (2)","isLocked":false,"opacity":100.0,"visible":true,},
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5ecb52e4-c67f-4351-9ba5-7c0de499da13","blendMode":0,"displayName":"default","isLocked":true,"opacity":100.0,"visible":false,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5ecb52e4-c67f-4351-9ba5-7c0de499da13","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 3,
@@ -33,7 +32,7 @@
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "spr_arrow_aiming",
+    "name": "spr_arrow_aiming_beta",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -55,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f83e96e8-60bd-4048-b0e2-f0c2cf6aeb39","path":"sprites/spr_arrow_aiming/spr_arrow_aiming.yy",},},},"Disabled":false,"id":"a398eee8-5630-4c0a-be17-97ce185eebfe","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"f83e96e8-60bd-4048-b0e2-f0c2cf6aeb39","path":"sprites/spr_arrow_aiming_beta/spr_arrow_aiming_beta.yy",},},},"Disabled":false,"id":"4fca69b7-45a5-414e-bf23-89a9e46a8e37","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

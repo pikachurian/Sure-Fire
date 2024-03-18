@@ -40,11 +40,12 @@ canShootArrow = true;
 
 walkSprite = spr_player_walking;//spr_player;//spr_player_walk;
 idleSprite = spr_player_idle;//spr_player_idle;
+jumpSprite = spr_player_jump;
 hurtSprite = spr_player_idle;//spr_player_hurt;
 deadSprite = spr_player_idle;//spr_player_dead;
 chargingArrowSprite = spr_player_charging;
 collisionSprite = spr_player_collision;
-arrowAimingSprite = spr_arrow_aiming;
+arrowAimingSprite = spr_arrow_aiming_beta;
 
 shootSFX = sfx_arrow_shoot;
 grappleSFX = sfx_grapple;
@@ -199,13 +200,25 @@ function UpdateSprite()
 	(sprite_index == deadSprite)
 		return;*/
 		
+		
+	image_speed = 1;
 	//Face direction.
 	image_xscale = dir;
-		
-	if(hspd != 0) || (vspd != 0)
-		sprite_index = walkSprite;
-	else
-		sprite_index = idleSprite;
+	
+	if(isGrounded == true)
+	{
+		if(hspd != 0) || (vspd != 0)
+			sprite_index = walkSprite;
+		else
+			sprite_index = idleSprite;
+	}else
+	{
+		if(sprite_index != jumpSprite)
+		{
+			sprite_index = jumpSprite;
+			image_index = 0;
+		}
+	}
 }
 
 function CheckGrappleSurface()
@@ -279,6 +292,27 @@ function ChangeState(_state)
 {
 	state = _state;
 }
+
+/*function IsGrounded()
+{
+	var _return = false;
+	var _sprite = sprite_index;
+	var _imageIndex = image_index;
+	sprite_index = collisionSprite;
+	
+	if(place_meeting(x, y + 1, obj_wall))
+		_return = true;
+		
+	var _door = instance_place(x, y + 1, obj_door);
+	if(_door != noone) && (_door.opened != true)
+		_return = true;
+		
+	sprite_index = _sprite;
+	image_index = _imageIndex;
+		
+	return _return;
+}*/
+
 
 
 //if(instance_exists(obj_json))

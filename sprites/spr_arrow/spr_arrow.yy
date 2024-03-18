@@ -4,7 +4,7 @@
   "name": "spr_arrow",
   "bbox_bottom": 49,
   "bbox_left": 0,
-  "bbox_right": 129,
+  "bbox_right": 109,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"052570fb-7c44-4bc9-8cc2-af4c59b3754c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"075f6d21-8845-42f9-a75e-e4273aabb8e4",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 50,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9803d38b-e52b-4722-b63e-8e1aeb613d67","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"220e47ef-cee7-4733-ad9a-14223bd0618f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 3,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"052570fb-7c44-4bc9-8cc2-af4c59b3754c","path":"sprites/spr_arrow/spr_arrow.yy",},},},"Disabled":false,"id":"58aac3be-e28c-4918-a696-601fe91fac7b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"075f6d21-8845-42f9-a75e-e4273aabb8e4","path":"sprites/spr_arrow/spr_arrow.yy",},},},"Disabled":false,"id":"b37ff1b8-a39a-46d6-8634-c81a59685deb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 130,
+  "width": 110,
 }

@@ -8,17 +8,19 @@ switch(state)
 			dir = sign(hspd);
 		
 		//Jumping
-		if(GetInput(INPUT.jumpPressed)) && (IsGrounded())
+		if(GetInput(INPUT.jumpPressed)) && (isGrounded == true)
+		{
 			vspd = -jumpSpd;
-		else
+		}else
 			ApplyGravity();
 
+	
 		
 		//Grapple.
 		if(grappleUnlocked == true)
 		{
 			CheckGrappleSurface();
-			if(GetInput(INPUT.grapplePressed)) && (IsGrounded()) && (point_distance(x, y, grappleTargetInstance.x, grappleTargetInstance.y) <= grappleRange)
+			if(GetInput(INPUT.grapplePressed)) && (isGrounded == true) && (point_distance(x, y, grappleTargetInstance.x, grappleTargetInstance.y) <= grappleRange)
 			{
 				//Play sound.
 				grappleSFXID = audio_play_sound(grappleSFX, 10, false);
@@ -78,21 +80,24 @@ switch(state)
 		UpdateSprite();
 		
 		//Walking sound effects.
-		if(GetInput(INPUT.leftPressed)) || (GetInput(INPUT.rightPressed))
+		if(isGrounded)
 		{
-			stepSFXTick = 0;
-			var _pitch = random_range(stepSFXMinPitch, stepSFXMaxPitch);
-			audio_play_sound(stepSFX, 8, false, 1, 0, _pitch);
-		}
-		
-		if(GetInput(INPUT.horizontalAxis) != 0)
-		{
-			if(stepSFXTick >= stepSFXTime)
+			if(GetInput(INPUT.leftPressed)) || (GetInput(INPUT.rightPressed))
 			{
 				stepSFXTick = 0;
 				var _pitch = random_range(stepSFXMinPitch, stepSFXMaxPitch);
 				audio_play_sound(stepSFX, 8, false, 1, 0, _pitch);
-			}else stepSFXTick += 1;
+			}
+		
+			if(GetInput(INPUT.horizontalAxis) != 0)
+			{
+				if(stepSFXTick >= stepSFXTime)
+				{
+					stepSFXTick = 0;
+					var _pitch = random_range(stepSFXMinPitch, stepSFXMaxPitch);
+					audio_play_sound(stepSFX, 8, false, 1, 0, _pitch);
+				}else stepSFXTick += 1;
+			}
 		}
 		
 		//For some unholy reason this code only works outside of UpdateSprite.

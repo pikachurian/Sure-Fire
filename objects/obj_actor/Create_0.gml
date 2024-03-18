@@ -17,6 +17,8 @@ jumpSpd = 7;
 grav = 1;
 gravMax = 32;
 
+isGrounded = false;
+
 function LoadData(_struct)
 {
 	grav = _struct.grav;
@@ -92,6 +94,12 @@ function MoveAndSlide()
 	y += vspd;
 	
 	PushOutOfWall();
+	
+	//Update isGrounded.
+	if(WallAt(x, y + 1, id))
+		isGrounded = true;
+	else
+		isGrounded = false;
 }
 
 function PushOutOfWall()

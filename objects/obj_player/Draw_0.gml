@@ -36,6 +36,28 @@ switch(state)
 		);
 		break;
 		
+	case PS.chargingMovableArrow:
+		//Draw aiming visual.
+		draw_sprite_ext(arrowAimingSprite, 0, x, y, 1, 1, shootAngle, c_white, 0.8);
+		
+		draw_self();
+		
+		//Draw shoot strength bar.
+		var _color = c_red;
+		if(shootStrength >= shootMovableStrengthMin)
+			_color = c_ltgrey;
+		DrawBar(
+			(shootStrength / 1),
+			x - 128,
+			y - 128,
+			128,
+			16,
+			4,
+			_color,
+			c_dkgrey
+		);
+		break;
+		
 	case PS.grappling:
 		draw_set_color(c_white);
 		draw_line_width(x, y, grappleTargetInstance.x, grappleTargetInstance.y, 4);

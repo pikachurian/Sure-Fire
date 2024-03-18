@@ -24,6 +24,7 @@ shootHeldTime = 0.15 * game_get_speed(gamespeed_fps);
 shootStrength = 0;
 shootStrengthAccel = 0.02;//0.01;
 shootStrengthMin = 0.2;
+shootMovableStrengthMin = 0.8;
 
 grappleRange = 720;//500;
 grappleSpd = 50;
@@ -45,7 +46,7 @@ hurtSprite = spr_player_idle;//spr_player_hurt;
 deadSprite = spr_player_idle;//spr_player_dead;
 chargingArrowSprite = spr_player_charging;
 collisionSprite = spr_player_collision;
-arrowAimingSprite = spr_arrow_aiming_beta;
+arrowAimingSprite = spr_arrow_aiming;
 
 shootSFX = sfx_arrow_shoot;
 grappleSFX = sfx_grapple;
@@ -68,7 +69,8 @@ enum PS
 	dead,
 	controlMovableArrow,
 	grappling,
-	chargingBasicArrow
+	chargingBasicArrow,
+	chargingMovableArrow
 }
 
 state = PS.main;

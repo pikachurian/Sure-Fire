@@ -52,7 +52,7 @@ switch(state)
 		}
 		
 		//Fire movable arrow.
-		if(movableArrowInstance == noone) && (movableArrowUnlocked == true)
+		/*if(movableArrowInstance == noone) && (movableArrowUnlocked == true)
 		{
 			if(GetInput(INPUT.specialPressed))
 			{
@@ -66,6 +66,17 @@ switch(state)
 		}else if(movableArrowInstance != noone) && (movableArrowUnlocked == true)
 		{
 			PullArrowLogic(obj_movable_arrow, INPUT.special, INPUT.specialReleased);
+		}*/
+		if(movableArrowUnlocked == true)
+		{
+			if(GetInput(INPUT.specialPressed))
+			{	
+				if(dir == 1)
+					shootAngle = 0;
+				else if(dir == -1)
+					shootAngle = 180;
+				ChangeState(PS.chargingMovableArrow);
+			}
 		}
 		
 		var _sprite = sprite_index;
@@ -130,6 +141,39 @@ switch(state)
 			image_speed = 1;
 			shootStrength = 0;
 			ChangeState(PS.main);
+		}
+		break;
+		
+	case PS.chargingMovableArrow:
+		sprite_index = chargingArrowSprite;
+		UpdateShootAngle();
+		
+		shootStrength = min(shootStrength + shootStrengthAccel, 1);
+		
+		if(GetInput(INPUT.specialReleased))
+		{	
+			if(shootStrength >= shootMovableStrengthMin)
+			{
+				var _arrowInstance = instance_create_depth(x, y, depth - 10, obj_movable_arrow);
+				if(dir == -1)
+					_arrowInstance.SetDirection(180);
+				_arrowInstance.SetDirection(shootAngle);
+				if(movableArrowInstance != noone)
+					instance_destroy(movableArrowInstance);
+				movableArrowInstance = _arrowInstance;
+				obj_camera.zoom = 0.75;
+				obj_camera.target = movableArrowInstance;
+				
+				image_speed = 1;
+				shootStrength = 0;
+
+				ChangeState(PS.controlMovableArrow);
+			}else
+			{
+				image_speed = 1;
+				shootStrength = 0;
+				ChangeState(PS.main);
+			}
 		}
 		break;
 		

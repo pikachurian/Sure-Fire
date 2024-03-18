@@ -31,6 +31,7 @@
     {"name":"spr_movable_arrow_delta","order":5,"path":"sprites/spr_movable_arrow_delta/spr_movable_arrow_delta.yy",},
     {"name":"rm_test_0","order":2,"path":"rooms/rm_test_0/rm_test_0.yy",},
     {"name":"sfx_grapple","order":1,"path":"sounds/sfx_grapple/sfx_grapple.yy",},
+    {"name":"spr_switch_trigger_red","order":2,"path":"sprites/spr_switch_trigger_red/spr_switch_trigger_red.yy",},
     {"name":"rm_tf_movable_pickup","order":2,"path":"rooms/rm_tf_movable_pickup/rm_tf_movable_pickup.yy",},
     {"name":"obj_json","order":7,"path":"objects/obj_json/obj_json.yy",},
     {"name":"spr_drone_gun","order":2,"path":"sprites/spr_drone_gun/spr_drone_gun.yy",},
@@ -97,5 +98,6 @@
     {"name":"obj_door","order":7,"path":"objects/obj_door/obj_door.yy",},
     {"name":"spr_arrow","order":3,"path":"sprites/spr_arrow/spr_arrow.yy",},
     {"name":"obj_bullet","order":2,"path":"objects/obj_bullet/obj_bullet.yy",},
+    {"name":"spr_switch_trigger_blue","order":1,"path":"sprites/spr_switch_trigger_blue/spr_switch_trigger_blue.yy",},
   ],
 }

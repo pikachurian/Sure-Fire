@@ -1,8 +1,13 @@
 triggered = false;
 triggerID = 0;
-image_speed = 0;
 
 reactiveObjects = [obj_switch_door];
+blueSprite = spr_switch_trigger_blue;
+redSprite = spr_switch_trigger_red;
+sprite_index = blueSprite;
+image_speed = 0;
+image_index = image_number - 1;
+
 
 function Action()
 {
@@ -16,10 +21,13 @@ function Action()
 		}
 	}
 	
-	if(image_index == 1)
-		image_index = 0;
+	if(sprite_index == blueSprite)
+		sprite_index = redSprite
 	else
-		image_index = 1;
+		sprite_index = blueSprite
+		
+	image_speed = 1;
+	image_index = 0;
 	
 	//Activate reactive objects.
 	for(var _i = 0; _i < array_length(reactiveObjects); _i ++)

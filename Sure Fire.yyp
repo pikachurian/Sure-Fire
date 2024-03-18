@@ -51,6 +51,7 @@
     {"id":{"name":"rm_test_0","path":"rooms/rm_test_0/rm_test_0.yy",},},
     {"id":{"name":"spr_player_walking","path":"sprites/spr_player_walking/spr_player_walking.yy",},},
     {"id":{"name":"sfx_grapple","path":"sounds/sfx_grapple/sfx_grapple.yy",},},
+    {"id":{"name":"spr_switch_trigger_red","path":"sprites/spr_switch_trigger_red/spr_switch_trigger_red.yy",},},
     {"id":{"name":"rm_tf_movable_pickup","path":"rooms/rm_tf_movable_pickup/rm_tf_movable_pickup.yy",},},
     {"id":{"name":"obj_json","path":"objects/obj_json/obj_json.yy",},},
     {"id":{"name":"spr_drone_gun","path":"sprites/spr_drone_gun/spr_drone_gun.yy",},},
@@ -128,6 +129,7 @@
     {"id":{"name":"obj_door","path":"objects/obj_door/obj_door.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
+    {"id":{"name":"spr_switch_trigger_blue","path":"sprites/spr_switch_trigger_blue/spr_switch_trigger_blue.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "RoomOrderNodes": [

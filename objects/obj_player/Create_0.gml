@@ -7,8 +7,6 @@ hp = hpMax;
 
 fric = 0.5;
 
-//bulletDamage = 10;
-//bulletSpeed = 4;//5;
 
 spd = 12;//10;
 jumpSpd = 24;
@@ -83,13 +81,6 @@ state = PS.main;
 	gravMax = _struct.gravMax;
 }*/
 
-//Go to start position.
-/*//For moving between rooms.
-if(global.playerStartX != -1)
-	x = global.playerStartX;
-	
-if(global.playerStartY != -1)
-	y = global.playerStartY;*/
 
 //Handles the logic for shooting and aiming an arrow.
 function ShootArrowLogic()
@@ -295,25 +286,6 @@ function ChangeState(_state)
 	state = _state;
 }
 
-/*function IsGrounded()
-{
-	var _return = false;
-	var _sprite = sprite_index;
-	var _imageIndex = image_index;
-	sprite_index = collisionSprite;
-	
-	if(place_meeting(x, y + 1, obj_wall))
-		_return = true;
-		
-	var _door = instance_place(x, y + 1, obj_door);
-	if(_door != noone) && (_door.opened != true)
-		_return = true;
-		
-	sprite_index = _sprite;
-	image_index = _imageIndex;
-		
-	return _return;
-}*/
 
 
 

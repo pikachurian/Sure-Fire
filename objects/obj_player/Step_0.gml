@@ -31,15 +31,6 @@ switch(state)
 		}
 		
 		//Shoot arrow logic.
-		//show_debug_message(canShootArrow)
-		/*if(ds_list_size(shotArrows) < arrowsMax)
-		{
-			if(canShootArrow == true)	
-				ShootArrowLogic();
-		}else
-		{
-			PullArrowLogic(obj_basic_arrow, INPUT.shoot, INPUT.shootReleased);
-		}*/
 		if(GetInput(INPUT.shootPressed))
 		{
 			if(dir == 1)
@@ -52,21 +43,6 @@ switch(state)
 		}
 		
 		//Fire movable arrow.
-		/*if(movableArrowInstance == noone) && (movableArrowUnlocked == true)
-		{
-			if(GetInput(INPUT.specialPressed))
-			{
-				ChangeState(PS.controlMovableArrow);
-				movableArrowInstance = instance_create_depth(x, y, depth - 10, obj_movable_arrow);
-				obj_camera.target = movableArrowInstance;
-				obj_camera.zoom = 0.75;
-				if(dir == -1)
-					movableArrowInstance.SetDirection(180);
-			}
-		}else if(movableArrowInstance != noone) && (movableArrowUnlocked == true)
-		{
-			PullArrowLogic(obj_movable_arrow, INPUT.special, INPUT.specialReleased);
-		}*/
 		if(movableArrowUnlocked == true)
 		{
 			if(GetInput(INPUT.specialPressed))
@@ -110,10 +86,6 @@ switch(state)
 				}else stepSFXTick += 1;
 			}
 		}
-		
-		//For some unholy reason this code only works outside of UpdateSprite.
-		//image_xscale = dir;
-		//The unholy reason was the dead and hurt sprite being the same as the idle and walk sprites.
 		break;
 		
 	case PS.chargingBasicArrow:

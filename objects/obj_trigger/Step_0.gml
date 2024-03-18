@@ -20,7 +20,7 @@ for(var _i = 0; _i < instance_number(obj_basic_arrow); _i ++)
 		}*/
 		if(active == true) && (place_meeting(x, y, other))
 		{
-			other.Action();
+			other.Action(id);
 			Destroy();
 			var _dir = point_direction(x, y, other.x, other.y);
 			image_angle = _dir;
@@ -49,7 +49,7 @@ for(var _i = 0; _i < instance_number(obj_movable_arrow); _i ++)
 	{
 		if(active == true) && (place_meeting(x, y, other))
 		{
-			other.Action();
+			other.Action(id);
 			Destroy();
 			var _dir = point_direction(x, y, other.x, other.y);
 			image_angle = _dir;

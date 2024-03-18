@@ -5,7 +5,7 @@ UpdateForce();
 switch(state)
 {
 	case ES.setup:
-		LoadData(obj_json.saveData.droneEnemy);
+		//LoadData(obj_json.saveData.droneEnemy);
 		ChangeState(ES.setRoamGoal);
 		break;
 		

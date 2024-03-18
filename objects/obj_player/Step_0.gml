@@ -26,14 +26,24 @@ switch(state)
 		}
 		
 		//Shoot arrow logic.
-		show_debug_message(canShootArrow)
-		if(ds_list_size(shotArrows) < arrowsMax)
+		//show_debug_message(canShootArrow)
+		/*if(ds_list_size(shotArrows) < arrowsMax)
 		{
 			if(canShootArrow == true)	
 				ShootArrowLogic();
 		}else
 		{
 			PullArrowLogic(obj_basic_arrow, INPUT.shoot, INPUT.shootReleased);
+		}*/
+		if(GetInput(INPUT.shootPressed))
+		{
+			if(dir == 1)
+				shootAngle = 0;
+			else if(dir == -1)
+				shootAngle = 180;
+				
+			shootStrength = 0;
+			ChangeState(PS.chargingBasicArrow);
 		}
 		
 		//Fire movable arrow.
@@ -67,6 +77,31 @@ switch(state)
 		//For some unholy reason this code only works outside of UpdateSprite.
 		//image_xscale = dir;
 		//The unholy reason was the dead and hurt sprite being the same as the idle and walk sprites.
+		break;
+		
+	case PS.chargingBasicArrow:
+		sprite_index = chargingArrowSprite;
+		UpdateShootAngle();
+		
+		shootStrength = min(shootStrength + shootStrengthAccel, 1);
+		
+		//Fire bow.
+		if(GetInput(INPUT.shootReleased))
+		{
+			if(shootStrength >= shootStrengthMin)
+			{
+				var _arrowInstance = instance_create_depth(x, y, depth - 10, obj_basic_arrow);
+				if(dir == -1)
+					_arrowInstance.SetDirection(180);
+				_arrowInstance.SetDirection(shootAngle);
+				_arrowInstance.SetArrowStrength(shootStrength);
+				ds_list_add(shotArrows, _arrowInstance);
+				obj_camera.shakeStrength = 10;
+			}
+			
+			shootStrength = 0;
+			ChangeState(PS.main);
+		}
 		break;
 		
 	case PS.controlMovableArrow:
@@ -104,3 +139,5 @@ switch(state)
 
 if(GetInput(INPUT.shootReleased))
 	canShootArrow = true;
+	
+CleanUpArrows();

@@ -20,6 +20,11 @@ shootAngle = 0;
 shootHeldTick = 0;
 shootHeldTime = 0.15 * game_get_speed(gamespeed_fps);
 
+//Goes from 0.0 to 1.0.
+shootStrength = 0;
+shootStrengthAccel = 0.02;//0.01;
+shootStrengthMin = 0.2;
+
 grappleRange = 720;//500;
 grappleSpd = 50;
 grappleTargetInstance = instance_create_depth(-1000, -1000, depth - 20, obj_grapple_target);
@@ -28,6 +33,7 @@ grappleTargetInstance = instance_create_depth(-1000, -1000, depth - 20, obj_grap
 movableArrowInstance = noone;
 shotArrows = ds_list_create();
 arrowsMax = 1;//3;
+arrowsInstMax = 10;
 
 canShootArrow = true;
 //canShootMovableArrow = true;
@@ -36,6 +42,7 @@ walkSprite = spr_player_walking;//spr_player;//spr_player_walk;
 idleSprite = spr_player_idle;//spr_player_idle;
 hurtSprite = spr_player_idle;//spr_player_hurt;
 deadSprite = spr_player_idle;//spr_player_dead;
+chargingArrowSprite = spr_player_idle;
 collisionSprite = spr_player_collision;
 
 grappleUnlocked = true;//false;
@@ -47,7 +54,8 @@ enum PS
 	main,
 	dead,
 	controlMovableArrow,
-	grappling
+	grappling,
+	chargingBasicArrow
 }
 
 state = PS.main;
@@ -97,7 +105,7 @@ function ShootArrowLogic()
 				}else shootAngle = _newShootAngle;
 			}else shootAngle = _newShootAngle;
 		}
-		show_debug_message(string(shootAngle));
+		//show_debug_message(string(shootAngle));
 		//Freeze Movement.
 		shootHeldTick ++;
 		if(shootHeldTick >= shootHeldTime)
@@ -114,6 +122,34 @@ function ShootArrowLogic()
 		obj_camera.shakeStrength = 10;
 		
 		shootHeldTick = 0;
+	}
+}
+
+function CleanUpArrows()
+{
+	if(ds_list_size(shotArrows) >= arrowsInstMax)
+	{
+		instance_destroy(shotArrows[|0]);
+		ds_list_delete(shotArrows, 0);
+	}
+}
+
+function UpdateShootAngle()
+{
+	if(GetInput(INPUT.horizontalAxis) != 0) || (GetInput(INPUT.verticalAxis) != 0)
+	{
+		var _newShootAngle = point_direction(0, 0, GetInput(INPUT.horizontalAxis), GetInput(INPUT.verticalAxis));
+	
+		if(IsGrounded())
+		{
+			if(_newShootAngle > 181) && (_newShootAngle < 359)
+			{
+				if(GetInput(INPUT.horizontalAxis) == 1)
+					shootAngle = 0;
+				else if(GetInput(INPUT.horizontalAxis) == -1)
+					shootAngle = 180;
+			}else shootAngle = _newShootAngle;
+		}else shootAngle = _newShootAngle;
 	}
 }
 

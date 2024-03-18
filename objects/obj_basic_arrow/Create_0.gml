@@ -1,8 +1,8 @@
 event_inherited();
 
-bowStrength = 1.5;
+/*bowStrength = 1.5;
 bowStrengthMin = 0.5;
-bowStrengthMax = 1.5;
+bowStrengthMax = 1.5;*/
 
 rotateSpd = 1.5;//1;
 spdMax = 40;
@@ -44,6 +44,16 @@ grav = 1;
 gravMax = 16;
 
 unstuck = false;
+
+//Uses a strength value, 0.0 to 1.0, to determine this arrow's stats.
+function SetArrowStrength(_strength)
+{
+	spd = lerp(spdMin, spdMax, _strength);
+	gravStartTime = lerp(gravStartTimeMin, gravStartTimeMax, _strength);
+	homingSpd = lerp(homingSpdMin, homingSpdMax, _strength);
+}
+
+SetArrowStrength(0);
 
 function ApplyGravity()
 {

@@ -44,6 +44,7 @@ hurtSprite = spr_player_idle;//spr_player_hurt;
 deadSprite = spr_player_idle;//spr_player_dead;
 chargingArrowSprite = spr_player_idle;
 collisionSprite = spr_player_collision;
+arrowAimingSprite = spr_arrow_aiming;
 
 grappleUnlocked = true;//false;
 movableArrowUnlocked = true;//false;

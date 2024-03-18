@@ -90,6 +90,17 @@ function MoveAndSlide()
 	}
 	
 	y += vspd;
+	
+	PushOutOfWall();
+}
+
+function PushOutOfWall()
+{
+	if(WallAt(x, y, id))
+	{
+		while(WallAt(x, y, id))
+			y -= 1;
+	}
 }
 
 function UpdateForce()

@@ -39,7 +39,7 @@ switch(state)
 	case PS.grappling:
 		draw_set_color(c_white);
 		draw_line_width(x, y, grappleTargetInstance.x, grappleTargetInstance.y, 4);
-		draw_self();
+		draw_self(); 
 		break;
 		
 	default:

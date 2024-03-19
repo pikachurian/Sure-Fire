@@ -8,7 +8,7 @@ obj_json.saveData.theRoom = room;
 
 obj_json.Save(obj_json.saveData, obj_json.saveFileName);*/
 //show_debug_message("ROOM" + string(room))
-if(room != rm_setup_json)
+if(room != rm_setup_json) && (room != rm_title)
 	obj_json.SaveSave();
 	
 /*if(instance_exists(checkPointData.inst))
@@ -19,7 +19,7 @@ if(room != rm_setup_json)
 	}
 }*/
 
-if(!instance_exists(obj_enemy)) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pickup) && (room != rm_tf_movable_pickup)
+if(!instance_exists(obj_enemy)) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pickup) && (room != rm_tf_movable_pickup) && (room != rm_title)
 {
 	if(audio_get_name(songPlaying) != "sng_lobby")
 	{
@@ -36,4 +36,10 @@ if(!instance_exists(obj_enemy)) && (room != rm_tf_left_shaft) && (room != rm_tf_
 	{
 		audio_stop_sound(songPlaying);
 	}else audio_stop_sound(songPlaying);
+}
+
+if(room == rm_title)
+{
+	audio_stop_all();
+	songPlaying = audio_play_sound(sng_title, 10, true);
 }

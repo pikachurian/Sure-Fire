@@ -41,7 +41,7 @@ walkSprite = spr_player_walking;//spr_player;//spr_player_walk;
 idleSprite = spr_player_idle;//spr_player_idle;
 jumpSprite = spr_player_jump;
 hurtSprite = spr_player_idle;//spr_player_hurt;
-deadSprite = spr_player_idle;//spr_player_dead;
+deadSprite = spr_player_dead;//spr_player_dead;
 chargingArrowSprite = spr_player_charging;
 collisionSprite = spr_player_collision;
 arrowAimingSprite = spr_arrow_aiming;
@@ -284,13 +284,8 @@ function Die()
 {
 	ChangeState(PS.dead);
 	sprite_index = deadSprite;
-	
-	ChangeState(PS.main);
-	if(obj_game_master.checkPointData.theRoom != noone)
-		obj_game_master.LoadCheckPoint();
-	else
-		obj_json.LoadSave();
-	hp = hpMax;
+	image_speed = 1;
+	image_index = 0;
 	//instance_create_depth(x, y, depth, obj_game_over);AAAAAAAAA
 }
 

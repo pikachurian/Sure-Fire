@@ -7,15 +7,35 @@ if(keyboard_check_pressed(vk_f4))
 if(keyboard_check_pressed(ord("L")))
 	LoadCheckPoint();
 	
-if(keyboard_check_pressed(ord("C")))
-	obj_json.ClearSave();
+/*if(keyboard_check_pressed(ord("C")))
+	obj_json.ClearSave();*/
 	
 switch(state)
 {
 	case GS.setup:
 		room_goto_next();
-		obj_json.LoadSave();
+		obj_json.saveData = obj_json.Load(obj_json.saveFileName);
 		ChangeState(GS.main);
+		
+		break;
+		
+	case GS.main:
+		if(room == rm_title)
+		{
+			obj_land_shark.image_alpha = 0;
+			if(obj_json.saveData.won == true)
+				obj_land_shark.image_alpha = 1;
+			if(keyboard_check_pressed(ord("C")))
+				obj_json.ClearSave();
+				
+			if(keyboard_check_pressed(vk_enter))
+			{
+				room_goto(rm_start);
+				
+				obj_player.x = 800;
+				obj_player.y = 1376;
+			}
+		}
 		break;
 }
 

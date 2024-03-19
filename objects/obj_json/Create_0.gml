@@ -71,7 +71,9 @@ saveData =
 		theRoom : noone,
 		x : 0,
 		y : 0
-	}
+	},
+	
+	won : false
 }
 
 function Save(_struct, _fileName)

@@ -17,8 +17,14 @@ switch(sprite_index)
 	image_index = image_number - 1;
 }*/
 
-/*if(sprite_index == deadSprite)
+if(sprite_index == deadSprite)
 {
 	image_speed = 0;
 	image_index = image_number - 1;
+	ChangeState(PS.main);
+	if(obj_game_master.checkPointData.theRoom != noone)
+		obj_game_master.LoadCheckPoint();
+	else
+		obj_json.LoadSave();
+	hp = hpMax;
 }

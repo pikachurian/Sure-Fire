@@ -22,4 +22,12 @@ if(songID != noone)
 		_y - 16,//camera_get_view_height(view_camera[0]) / 2 - 16,
 		"YOU GOT THE " + name + "!"
 		);
+		
+	//About item.
+	draw_set_color(c_white);
+	draw_text(
+		_x - 16,//camera_get_view_width(view_camera[0]) / 2 - 16, 
+		_y + 64,//camera_get_view_height(view_camera[0]) / 2 - 16,
+		about
+		);
 }

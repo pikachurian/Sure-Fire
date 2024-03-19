@@ -1,6 +1,7 @@
 event_inherited();
 
 name = "GRAPPLE";
+about = "Press I to grapple \nto ledges.";
 
 if(obj_player.grappleUnlocked)
 {

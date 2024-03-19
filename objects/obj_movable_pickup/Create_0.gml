@@ -1,6 +1,7 @@
 event_inherited();
 
 name = "REMOTE CONTROL ARROW";
+about = "Hold and release K\nto shoot a controllable arrow.\nUse A and D to steer \nthe arrow.";
 
 if(obj_player.movableArrowUnlocked)
 {

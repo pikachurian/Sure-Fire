@@ -272,13 +272,14 @@ function TakeDamage(_amount)
 {
 	if(state != PS.dead) && (invinceTick >= invinceTime)
 	{
-		//audio_play_sound(sfx_player_hurt, 8, false);AAAAAA
+		audio_play_sound(sfx_player_hit, 8, false);
 		
 		sprite_index = hurtSprite;
 	
 		hp -= _amount;
 		
 		invinceTick = 0;
+		obj_camera.shakeStrength = 50;
 	
 		if(hp <= 0)
 			Die();

@@ -18,6 +18,14 @@ enum GS
 
 state = GS.setup;
 
+//Ending.
+whiteScreenAlpha = 0;
+whiteScreenAlphaRate = 0.0012;
+
+endingScreenShakeMax = 100;
+
+
+
 function LoadCheckPoint()
 {
 	if(checkPointData.theRoom != noone)

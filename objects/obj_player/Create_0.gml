@@ -68,7 +68,8 @@ enum PS
 	controlMovableArrow,
 	grappling,
 	chargingBasicArrow,
-	chargingMovableArrow
+	chargingMovableArrow,
+	pause
 }
 
 state = PS.main;

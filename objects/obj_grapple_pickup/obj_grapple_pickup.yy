@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_grapple_pickup",
-    "path": "sprites/spr_grapple_pickup/spr_grapple_pickup.yy",
+    "name": "spr_movable_arrow_beta",
+    "path": "sprites/spr_movable_arrow_beta/spr_movable_arrow_beta.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -37,6 +37,7 @@ function Destroy()
 	image_speed = 1;
 	active = false;
 	sprite_index = explodeSprite;
+	audio_play_sound(sfx_arrow_land, 14, false);
 }
 
 function UpdateWallCollision()

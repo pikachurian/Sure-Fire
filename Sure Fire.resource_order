@@ -87,6 +87,7 @@
     {"name":"spr_grapple_surface","order":10,"path":"sprites/spr_grapple_surface/spr_grapple_surface.yy",},
     {"name":"rm_setup_json","order":5,"path":"rooms/rm_setup_json/rm_setup_json.yy",},
     {"name":"rm_title","order":6,"path":"rooms/rm_title/rm_title.yy",},
+    {"name":"sfx_arrow_land","order":12,"path":"sounds/sfx_arrow_land/sfx_arrow_land.yy",},
     {"name":"obj_roomba_enemy","order":4,"path":"objects/obj_roomba_enemy/obj_roomba_enemy.yy",},
     {"name":"obj_switch_trigger","order":8,"path":"objects/obj_switch_trigger/obj_switch_trigger.yy",},
     {"name":"spr_arrow_delta","order":2,"path":"sprites/spr_arrow_delta/spr_arrow_delta.yy",},

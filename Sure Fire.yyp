@@ -118,6 +118,7 @@
     {"id":{"name":"spr_grapple_surface","path":"sprites/spr_grapple_surface/spr_grapple_surface.yy",},},
     {"id":{"name":"rm_setup_json","path":"rooms/rm_setup_json/rm_setup_json.yy",},},
     {"id":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
+    {"id":{"name":"sfx_arrow_land","path":"sounds/sfx_arrow_land/sfx_arrow_land.yy",},},
     {"id":{"name":"obj_roomba_enemy","path":"objects/obj_roomba_enemy/obj_roomba_enemy.yy",},},
     {"id":{"name":"obj_switch_trigger","path":"objects/obj_switch_trigger/obj_switch_trigger.yy",},},
     {"id":{"name":"obj_basic_arrow","path":"objects/obj_basic_arrow/obj_basic_arrow.yy",},},

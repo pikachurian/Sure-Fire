@@ -4,6 +4,7 @@
   "name": "obj_switch_door",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -31,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_door_switch_beta",
-    "path": "sprites/spr_door_switch_beta/spr_door_switch_beta.yy",
+    "name": "spr_door_switch_blue",
+    "path": "sprites/spr_door_switch_blue/spr_door_switch_blue.yy",
   },
   "spriteMaskId": null,
   "visible": true,

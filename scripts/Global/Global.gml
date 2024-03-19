@@ -130,7 +130,6 @@ function RotateTowards(_currentAngle, _targetAngle, _spd)
 					
 }
 
-//function AreAllEnemiesDead()
 function AllEnemiesDead()
 {
 	for(var _i = 0; _i < instance_number(obj_enemy); _i ++)
@@ -140,4 +139,13 @@ function AllEnemiesDead()
 			return false;
 	}
 	return true;
+}
+
+function PlayHitFeedback()
+{
+	var _sounds = [sfx_trumpet_0, sfx_trumpet_1, sfx_trumpet_2, sfx_trumpet_3];
+	
+	audio_play_sound(_sounds[array_length(_sounds) - 1], 15, false);
+		
+	instance_create_depth(x, y, depth + 10, obj_effect);
 }

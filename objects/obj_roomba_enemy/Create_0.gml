@@ -34,6 +34,8 @@ function TakeDamage(_amount)
 {
 	if(isDead == false)
 	{
+		PlayHitFeedback();
+		
 		//audio_play_sound(sfx_enemy_hurt, 5, false);
 		
 		hp -= _amount;

@@ -208,12 +208,19 @@ function Die()
 	sprite_index = deadSprite;
 	image_alpha = 0.2;
 	ChangeState(ES.dead);
+	instance_destroy();
+
 }
 
 function TakeDamage(_amount)
 {
 	if(state != ES.dead)
 	{
+		var _sounds = [sfx_trumpet_0, sfx_trumpet_1, sfx_trumpet_2, sfx_trumpet_3];
+	
+		audio_play_sound(_sounds[irandom(3)], 15, false);
+		
+		instance_create_depth(x, y, depth + 10, obj_effect);
 		//audio_play_sound(sfx_enemy_hurt, 5, false);
 		
 		hp -= _amount;

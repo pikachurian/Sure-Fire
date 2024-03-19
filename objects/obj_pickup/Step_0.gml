@@ -10,7 +10,7 @@ if(audio_is_playing(songID) == false) && (songID != noone)
 {
 	songID = noone;
 	obj_player.ChangeState(PS.main);
-	obj_json.SaveSave();
+	//obj_json.SaveSave();
 }
 
 if(isCollected == false)

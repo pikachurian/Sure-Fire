@@ -18,3 +18,22 @@ if(room != rm_setup_json)
 		image_index = image_index - 1;
 	}
 }*/
+
+if(!instance_exists(obj_enemy)) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pickup) && (room != rm_tf_movable_pickup)
+{
+	if(audio_get_name(songPlaying) != "sng_lobby")
+	{
+		audio_stop_sound(songPlaying);
+		songPlaying = audio_play_sound(sng_lobby, 3, true);
+	}
+}else
+{
+	if(instance_exists(obj_enemy)) && (audio_get_name(songPlaying) != "sng_battle")
+	{
+		audio_stop_sound(songPlaying);
+		songPlaying = audio_play_sound(sng_battle, 3, true);
+	}else if(!instance_exists(obj_enemy))
+	{
+		audio_stop_sound(songPlaying);
+	}else audio_stop_sound(songPlaying);
+}

@@ -1,4 +1,5 @@
 creationRoom = room;
+songPlaying = noone;
 
 checkPointData = 
 {

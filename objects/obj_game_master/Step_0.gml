@@ -18,3 +18,9 @@ switch(state)
 		ChangeState(GS.main);
 		break;
 }
+
+if(audio_get_name(songPlaying) == "sng_battle") && (!instance_exists(obj_enemy))
+{
+	audio_stop_sound(songPlaying);
+	songPlaying = audio_play_sound(sng_lobby, 3, true);
+}

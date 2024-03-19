@@ -27,6 +27,11 @@ function Action(_arrowInst)
 		ds_list_delete(obj_player.shotArrows, ds_list_find_index(obj_player.shotArrows, _arrowInst));
 		instance_destroy(_arrowInst);
 		
+		obj_player.hp = obj_player.hpMax;
+		obj_json.SaveSave();
+	}else if(_arrowInst.object_index == obj_basic_arrow)
+	{
+		obj_player.hp = obj_player.hpMax;
 		obj_json.SaveSave();
 	}
 }

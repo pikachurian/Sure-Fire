@@ -58,7 +58,7 @@ saveData =
 	{
 		x : 800,
 		y : 1376,
-		hp : 20,
+		hp : 100,
 		grappleUnlocked : false,
 		movableArrowUnlocked : false
 	},
@@ -131,6 +131,12 @@ function SaveSave()
 	saveData.theRoom = room;
 
 	Save(saveData, saveFileName);
+}
+
+function ClearSave()
+{
+	if(file_exists(saveFileName))
+		file_delete(saveFileName);
 }
 
 /*if(Load() == false)

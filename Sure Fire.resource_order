@@ -30,6 +30,7 @@
     {"name":"Hazards","order":26,"path":"folders/Sprites/Hazards.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"obj_spikes_insta_death","order":12,"path":"objects/obj_spikes_insta_death/obj_spikes_insta_death.yy",},
     {"name":"spr_movable_arrow_delta","order":5,"path":"sprites/spr_movable_arrow_delta/spr_movable_arrow_delta.yy",},
     {"name":"rm_test_0","order":2,"path":"rooms/rm_test_0/rm_test_0.yy",},
     {"name":"sfx_grapple","order":1,"path":"sounds/sfx_grapple/sfx_grapple.yy",},

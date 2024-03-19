@@ -47,6 +47,7 @@
     "IDEVersion": "2023.11.1.129",
   },
   "resources": [
+    {"id":{"name":"obj_spikes_insta_death","path":"objects/obj_spikes_insta_death/obj_spikes_insta_death.yy",},},
     {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"id":{"name":"spr_movable_arrow_delta","path":"sprites/spr_movable_arrow_delta/spr_movable_arrow_delta.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},

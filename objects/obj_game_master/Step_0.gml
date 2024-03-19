@@ -7,6 +7,9 @@ if(keyboard_check_pressed(vk_f4))
 if(keyboard_check_pressed(ord("L")))
 	LoadCheckPoint();
 	
+if(keyboard_check_pressed(ord("C")))
+	obj_json.ClearSave();
+	
 switch(state)
 {
 	case GS.setup:

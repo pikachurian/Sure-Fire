@@ -284,6 +284,12 @@ function Die()
 	ChangeState(PS.dead);
 	sprite_index = deadSprite;
 	
+	ChangeState(PS.main);
+	if(obj_game_master.checkPointData.theRoom != noone)
+		obj_game_master.LoadCheckPoint();
+	else
+		obj_json.LoadSave();
+	hp = hpMax;
 	//instance_create_depth(x, y, depth, obj_game_over);AAAAAAAAA
 }
 

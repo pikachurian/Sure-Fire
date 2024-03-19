@@ -92,6 +92,8 @@ switch(state)
 	case PS.chargingBasicArrow:
 		sprite_index = chargingArrowSprite;
 		UpdateShootAngle();
+		if(GetInput(INPUT.horizontalAxis) != 0)
+			image_xscale = GetInput(INPUT.horizontalAxis)
 		
 		shootStrength = min(shootStrength + shootStrengthAccel, 1);
 		
@@ -120,6 +122,8 @@ switch(state)
 	case PS.chargingMovableArrow:
 		sprite_index = chargingArrowSprite;
 		UpdateShootAngle();
+		if(GetInput(INPUT.horizontalAxis) != 0)
+			image_xscale = GetInput(INPUT.horizontalAxis);
 		
 		shootStrength = min(shootStrength + shootStrengthAccel, 1);
 		

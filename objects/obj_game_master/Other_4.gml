@@ -8,7 +8,7 @@ obj_json.saveData.theRoom = room;
 
 obj_json.Save(obj_json.saveData, obj_json.saveFileName);*/
 //show_debug_message("ROOM" + string(room))
-if(room != rm_setup_json) && (room != rm_title)
+if(room != rm_setup_json) && (room != rm_title) && (room != rm_ending)
 	obj_json.SaveSave();
 	
 /*if(instance_exists(checkPointData.inst))
@@ -19,7 +19,7 @@ if(room != rm_setup_json) && (room != rm_title)
 	}
 }*/
 
-if(AllEnemiesDead()) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pickup) && (room != rm_tf_movable_pickup) && (room != rm_title)
+if(AllEnemiesDead()) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pickup) && (room != rm_tf_movable_pickup) && (room != rm_title) && (room != rm_ending)
 {
 	if(audio_get_name(songPlaying) != "sng_lobby")
 	{
@@ -38,8 +38,23 @@ if(AllEnemiesDead()) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pic
 	}else audio_stop_sound(songPlaying);
 }
 
-if(room == rm_title)
+switch(room)
+{
+	case rm_title:
+		audio_stop_all();
+		songPlaying = audio_play_sound(sng_title, 10, true);
+		break;
+		
+	case rm_ending:
+		obj_player.ChangeState(PS.pause);
+		obj_player.image_xscale = 1;
+		obj_player.sprite_index = obj_player.idleSprite;
+		obj_player.MoveAndSlide();
+		break;
+}
+
+/*if(room == rm_title)
 {
 	audio_stop_all();
 	songPlaying = audio_play_sound(sng_title, 10, true);
-}
+}*/

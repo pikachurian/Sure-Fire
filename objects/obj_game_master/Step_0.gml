@@ -10,6 +10,7 @@ if(keyboard_check_pressed(ord("L")))
 switch(state)
 {
 	case GS.setup:
+		room_goto_next();
 		obj_json.LoadSave();
 		ChangeState(GS.main);
 		break;

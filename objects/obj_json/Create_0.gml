@@ -56,8 +56,8 @@ saveData =
 {
 	player : 
 	{
-		x : 0,
-		y : 0,
+		x : 800,
+		y : 1376,
 		hp : 20,
 		grappleUnlocked : false,
 		movableArrowUnlocked : false
@@ -67,10 +67,10 @@ saveData =
 	
 	checkPoint : 
 	{
-		checkPointInst : noone,
-		checkPointRoom : noone,
-		checkPointX : 0,
-		checkPointY : 0
+		inst : noone,
+		theRoom : noone,
+		x : 0,
+		y : 0
 	}
 }
 
@@ -113,10 +113,10 @@ function Load(_fileName)
 function LoadSave()
 {
 	saveData = Load(saveFileName);
-	show_debug_message("AAAAAAAA "+string(saveData))
-	room_goto(saveData.theRoom);
+	//show_debug_message("AAAAAAAA "+string(saveData))
 	obj_player.LoadSaveStruct(saveData.player);
 	obj_game_master.LoadSaveStruct(saveData.checkPoint);
+	room_goto(saveData.theRoom);
 	//show_debug_message("ABABABA")
 }
 
@@ -143,3 +143,4 @@ if(file_exists(saveFileName))
 {
 	//LoadSave();
 }else Save(saveData, saveFileName);
+//show_debug_message("AHHHHHH")

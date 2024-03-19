@@ -7,5 +7,14 @@ obj_json.saveData.player.y = obj_player.y;
 obj_json.saveData.theRoom = room;
 
 obj_json.Save(obj_json.saveData, obj_json.saveFileName);*/
-if(room != creationRoom) && (room!= rm_start)
+//show_debug_message("ROOM" + string(room))
+if(room != rm_setup_json)
 	obj_json.SaveSave();
+	
+/*if(instance_exists(checkPointData.inst))
+{
+	with(checkPointData.inst)
+	{
+		image_index = image_index - 1;
+	}
+}*/

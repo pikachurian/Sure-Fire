@@ -27,6 +27,7 @@
     {"name":"Player","order":23,"path":"folders/Sprites/Player.yy",},
     {"name":"Targets","order":24,"path":"folders/Sprites/Targets.yy",},
     {"name":"Other","order":25,"path":"folders/Sprites/Other.yy",},
+    {"name":"Hazards","order":26,"path":"folders/Sprites/Hazards.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_movable_arrow_delta","order":5,"path":"sprites/spr_movable_arrow_delta/spr_movable_arrow_delta.yy",},
@@ -46,6 +47,7 @@
     {"name":"spr_camera_debug16","order":15,"path":"sprites/spr_camera_debug16/spr_camera_debug16.yy",},
     {"name":"spr_door_switch_beta","order":19,"path":"sprites/spr_door_switch_beta/spr_door_switch_beta.yy",},
     {"name":"obj_basic_trigger","order":6,"path":"objects/obj_basic_trigger/obj_basic_trigger.yy",},
+    {"name":"obj_spikes","order":11,"path":"objects/obj_spikes/obj_spikes.yy",},
     {"name":"obj_enemy_waypoint","order":2,"path":"objects/obj_enemy_waypoint/obj_enemy_waypoint.yy",},
     {"name":"spr_movable_arrow","order":4,"path":"sprites/spr_movable_arrow/spr_movable_arrow.yy",},
     {"name":"spr_player_charging","order":8,"path":"sprites/spr_player_charging/spr_player_charging.yy",},
@@ -75,6 +77,7 @@
     {"name":"spr_room_exit_beta","order":12,"path":"sprites/spr_room_exit_beta/spr_room_exit_beta.yy",},
     {"name":"obj_player","order":2,"path":"objects/obj_player/obj_player.yy",},
     {"name":"obj_movable_pickup","order":2,"path":"objects/obj_movable_pickup/obj_movable_pickup.yy",},
+    {"name":"spr_insta_kill","order":1,"path":"sprites/spr_insta_kill/spr_insta_kill.yy",},
     {"name":"obj_trigger","order":5,"path":"objects/obj_trigger/obj_trigger.yy",},
     {"name":"obj_arrow_trail","order":12,"path":"objects/obj_arrow_trail/obj_arrow_trail.yy",},
     {"name":"rm_tf_tall_platforms","order":1,"path":"rooms/rm_tf_tall_platforms/rm_tf_tall_platforms.yy",},

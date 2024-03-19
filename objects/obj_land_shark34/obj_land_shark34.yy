@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_land_shark_ending",
+  "name": "obj_land_shark34",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_land_shark_BIG",
-    "path": "sprites/spr_land_shark_BIG/spr_land_shark_BIG.yy",
+    "name": "spr_land_shark64",
+    "path": "sprites/spr_land_shark64/spr_land_shark64.yy",
   },
   "spriteMaskId": null,
   "visible": true,

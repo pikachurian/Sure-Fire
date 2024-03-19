@@ -29,9 +29,9 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_wall_top_left_origin",
-    "path": "sprites/spr_wall_top_left_origin/spr_wall_top_left_origin.yy",
+    "name": "spr_wall65",
+    "path": "sprites/spr_wall65/spr_wall65.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

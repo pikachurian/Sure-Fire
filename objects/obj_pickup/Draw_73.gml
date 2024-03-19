@@ -8,6 +8,7 @@ if(songID != noone)
 	var _x = _viewX + _viewWidth / 2;
 	var _y = _viewY + _viewHeight / 2;
 	
+	draw_set_halign(fa_center);
 	draw_set_font(fnt_sans);
 	draw_set_color(c_black);
 	draw_text(

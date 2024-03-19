@@ -5,6 +5,10 @@ isPlayer = true;
 hpMax = 100;
 hp = hpMax;
 
+//This gives the player invulnerability for a short time after taking damage.
+invinceTick = 0;
+invinceTime = 1 * game_get_speed(gamespeed_fps);
+
 fric = 0.5;
 
 
@@ -32,7 +36,7 @@ grappleTargetInstance = instance_create_depth(-1000, -1000, depth - 20, obj_grap
 movableArrowInstance = noone;
 shotArrows = ds_list_create();
 arrowsMax = 1;//3;
-arrowsInstMax = 10;
+arrowsInstMax = 30;//10;
 
 canShootArrow = true;
 //canShootMovableArrow = true;
@@ -266,13 +270,15 @@ function CheckGrappleSurface()
 
 function TakeDamage(_amount)
 {
-	if(state != PS.dead)
+	if(state != PS.dead) && (invinceTick >= invinceTime)
 	{
 		//audio_play_sound(sfx_player_hurt, 8, false);AAAAAA
 		
 		sprite_index = hurtSprite;
 	
 		hp -= _amount;
+		
+		invinceTick = 0;
 	
 		if(hp <= 0)
 			Die();

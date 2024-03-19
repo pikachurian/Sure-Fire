@@ -189,3 +189,5 @@ if(GetInput(INPUT.shootReleased))
 	canShootArrow = true;
 	
 CleanUpArrows();
+
+invinceTick += 1;

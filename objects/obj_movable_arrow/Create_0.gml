@@ -3,7 +3,7 @@ event_inherited();
 rotateSpd = 2;//1.5;//1;
 spd = 10;
 
-bulletTarget = BT.noone;
+bulletTarget = BT.enemy;
 bulletSprite = spr_movable_arrow;
 wallCollisionSprite = spr_arrow_collision;
 explodeSprite = spr_movable_arrow;

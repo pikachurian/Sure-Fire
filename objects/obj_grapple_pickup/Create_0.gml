@@ -10,8 +10,8 @@ if(obj_player.grappleUnlocked)
 
 function Collected()
 {
-	obj_json.SaveSave();
 	obj_player.grappleUnlocked = true;
+	obj_json.SaveSave();
 	obj_player.sprite_index = spr_player_grapple_get;
 	image_alpha = 0.25;
 }

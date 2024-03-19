@@ -30,10 +30,12 @@ switch(state)
 				
 			if(keyboard_check_pressed(vk_enter))
 			{
-				room_goto(rm_start);
+				obj_json.LoadSave();
 				
-				obj_player.x = 800;
-				obj_player.y = 1376;
+				//obj_player.x = 500;
+				//obj_player.y = 1222;
+				room_goto(obj_json.saveData.theRoom);
+				show_debug_message(rm_start);
 			}
 		}
 		break;

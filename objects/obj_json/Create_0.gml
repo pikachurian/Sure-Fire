@@ -52,7 +52,7 @@ startingData =
 }
 
 
-saveData = 
+saveDataDefault = 
 {
 	player : 
 	{
@@ -75,6 +75,8 @@ saveData =
 	
 	won : false
 }
+
+saveData = saveDataDefault;
 
 function Save(_struct, _fileName)
 {
@@ -138,7 +140,11 @@ function SaveSave()
 function ClearSave()
 {
 	if(file_exists(saveFileName))
+	{
 		file_delete(saveFileName);
+		saveData = saveDataDefault;
+		Save(saveData, saveFileName);
+	}
 }
 
 /*if(Load() == false)

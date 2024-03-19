@@ -19,7 +19,7 @@ if(room != rm_setup_json) && (room != rm_title)
 	}
 }*/
 
-if(!instance_exists(obj_enemy)) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pickup) && (room != rm_tf_movable_pickup) && (room != rm_title)
+if(AllEnemiesDead()) && (room != rm_tf_left_shaft) && (room != rm_tf_grapple_pickup) && (room != rm_tf_movable_pickup) && (room != rm_title)
 {
 	if(audio_get_name(songPlaying) != "sng_lobby")
 	{
@@ -28,13 +28,13 @@ if(!instance_exists(obj_enemy)) && (room != rm_tf_left_shaft) && (room != rm_tf_
 	}
 }else
 {
-	if(instance_exists(obj_enemy)) && (audio_get_name(songPlaying) != "sng_battle")
+	if(AllEnemiesDead() == false) && (audio_get_name(songPlaying) != "sng_battle")
 	{
 		audio_stop_sound(songPlaying);
 		songPlaying = audio_play_sound(sng_battle, 3, true);
-	}else if(!instance_exists(obj_enemy))
+	}else if(AllEnemiesDead() == false)
 	{
-		audio_stop_sound(songPlaying);
+		//audio_stop_sound(songPlaying);
 	}else audio_stop_sound(songPlaying);
 }
 

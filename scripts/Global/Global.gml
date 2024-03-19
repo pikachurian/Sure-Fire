@@ -129,3 +129,15 @@ function RotateTowards(_currentAngle, _targetAngle, _spd)
 	return _newDir
 					
 }
+
+//function AreAllEnemiesDead()
+function AllEnemiesDead()
+{
+	for(var _i = 0; _i < instance_number(obj_enemy); _i ++)
+	{
+		var _inst = instance_find(obj_enemy, _i);
+		if(_inst.isDead == false)
+			return false;
+	}
+	return true;
+}

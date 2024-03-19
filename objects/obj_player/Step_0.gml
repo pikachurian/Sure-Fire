@@ -1,5 +1,10 @@
 switch(state)
 {
+	case PS.setup:
+		LoadData(obj_json.jsonData.player);
+		ChangeState(PS.main);
+		break;
+	
 	case PS.main:
 		hspd = GetInput(INPUT.horizontalAxis) * spd;
 		

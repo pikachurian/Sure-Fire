@@ -67,6 +67,7 @@ movableArrowUnlocked = true;//false;
 //Player State.
 enum PS 
 {
+	setup,
 	main,
 	dead,
 	controlMovableArrow,
@@ -76,15 +77,19 @@ enum PS
 	pause
 }
 
-state = PS.main;
+state = PS.setup;
 
-/*function LoadData(_struct)
+function LoadData(_struct)
 {
+	hpMax = _struct.hpMax;
+	hp = hpMax;
 	spd = _struct.spd;
 	jumpSpd = _struct.jumpSpd;
 	grav = _struct.grav;
 	gravMax = _struct.gravMax;
-}*/
+	shootStrengthAccel = _struct.shootStrengthAccel;
+	grappleRange = _struct.grappleRange;
+}
 
 
 //Handles the logic for shooting and aiming an arrow.

@@ -2,7 +2,8 @@
 saveFileName = "todd.json";
 
 //Starting stats for most objects.
-startingData = 
+#region Unused, but good for future reference.
+/*startingData = 
 {
 	actor : 
 	{
@@ -49,8 +50,11 @@ startingData =
 		sprite : "spr_drone",
 		gunSprite : "spr_drone_gun"
 	}
-}
+}*/
+#endregion
 
+//Used to edit the game externally.
+jsonData = noone;
 
 saveDataDefault = 
 {
@@ -146,6 +150,9 @@ function ClearSave()
 		Save(saveData, saveFileName);
 	}
 }
+
+//Load JSON data.
+jsonData = Load("data.json");
 
 /*if(Load() == false)
 {

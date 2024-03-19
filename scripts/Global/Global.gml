@@ -145,7 +145,7 @@ function PlayHitFeedback()
 {
 	var _sounds = [sfx_trumpet_0, sfx_trumpet_1, sfx_trumpet_2, sfx_trumpet_3];
 	
-	audio_play_sound(_sounds[array_length(_sounds) - 1], 15, false);
+	audio_play_sound(_sounds[irandom(array_length(_sounds) - 1)], 15, false);
 		
 	instance_create_depth(x, y, depth + 10, obj_effect);
 }

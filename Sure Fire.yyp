@@ -42,7 +42,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"data.json","CopyToMask":-1,"filePath":"datafiles",},
+  ],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
@@ -101,6 +103,7 @@
     {"id":{"name":"fnt_basic","path":"fonts/fnt_basic/fnt_basic.yy",},},
     {"id":{"name":"fnt_sans","path":"fonts/fnt_sans/fnt_sans.yy",},},
     {"id":{"name":"spr_shrimp_gun","path":"sprites/spr_shrimp_gun/spr_shrimp_gun.yy",},},
+    {"id":{"name":"obj_html_scaler","path":"objects/obj_html_scaler/obj_html_scaler.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"spr_spikes","path":"sprites/spr_spikes/spr_spikes.yy",},},
     {"id":{"name":"obj_movable_arrow","path":"objects/obj_movable_arrow/obj_movable_arrow.yy",},},

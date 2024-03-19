@@ -105,16 +105,18 @@ function MoveAndSlide()
 	
 	y += vspd;
 }
-/*function LoadData(_struct)
-{
+function LoadData(_struct)
+{/*
 	rotateSpd = _struct.rotateSpd;
 	spd = _struct.spd;
 	
 	bulletTarget = _struct.bulletTarget;
 	bulletSprite = _struct.bulletSprite;
 	wallCollisionSprite = _struct.wallCollisionSprite;
-	explodeSprite = _struct.explodeSprite;
+	explodeSprite = _struct.explodeSprite;*/
+	spd = _struct.spd;
+	rotateSpd = _struct.rotateSpd;
 }
 
 if(instance_exists(obj_json))
-	LoadData(obj_json.saveData.movableArrow);*/
+	LoadData(obj_json.jsonData.movableArrow);

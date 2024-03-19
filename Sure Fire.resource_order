@@ -72,6 +72,7 @@
     {"name":"obj_grapple_pickup","order":1,"path":"objects/obj_grapple_pickup/obj_grapple_pickup.yy",},
     {"name":"fnt_sans","order":1,"path":"fonts/fnt_sans/fnt_sans.yy",},
     {"name":"spr_shrimp_gun","order":1,"path":"sprites/spr_shrimp_gun/spr_shrimp_gun.yy",},
+    {"name":"obj_html_scaler","order":14,"path":"objects/obj_html_scaler/obj_html_scaler.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"obj_movable_arrow","order":1,"path":"objects/obj_movable_arrow/obj_movable_arrow.yy",},
     {"name":"spr_player_collision","order":2,"path":"sprites/spr_player_collision/spr_player_collision.yy",},

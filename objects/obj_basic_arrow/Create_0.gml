@@ -160,17 +160,26 @@ function MoveAndSlide()
 	y += vspd;
 }
 
-/*function LoadData(_struct)
+function LoadData(_struct)
 {
-	rotateSpd = _struct.rotateSpd;
+	/*rotateSpd = _struct.rotateSpd;
 	spd = _struct.spd;
 	rotateGrav = _struct.rotateGrav;
 	
 	bulletTarget = _struct.bulletTarget;
 	bulletSprite = _struct.bulletSprite;
 	wallCollisionSprite = _struct.wallCollisionSprite;
-	explodeSprite = _struct.explodeSprite;
+	explodeSprite = _struct.explodeSprite;*/
+	spdMax = _struct.spdMax;
+	spdMin = _struct.spdMin;
+	spd = spdMax;
+	rotateGrav = _struct.rotateGrav;
+	rotateVelocityMax = _struct.rotateVelocityMax;
+	homingRange = _struct.homingRange;
+	homingSpdMax = _struct.homingSpdMax;
+	homingSpdMin = _struct.homingSpdMin;
+	homingSpd = homingSpdMax;
 }
 
-if(instance_exists(obj_json))
-	LoadData(obj_json.saveData.basicArrow);*/
+
+LoadData(obj_json.jsonData.basicArrow);

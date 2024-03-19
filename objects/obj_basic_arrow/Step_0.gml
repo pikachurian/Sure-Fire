@@ -46,6 +46,9 @@ if(active)
 				if(_inst.object_index == obj_drone_enemy) && (_inst.state == ES.dead)
 					_canHit = false;
 					
+				if(_inst.object_index == obj_roomba_enemy) && (_inst.isDead == true)
+					_canHit = false;
+					
 				if(_inst.object_index == obj_basic_trigger) && (_inst.triggered == true)
 					_canHit = false;	
 					

@@ -1,0 +1,53 @@
+{
+    "player" : 
+    {
+        "hpMax" : 100,
+        "spd" : 12,
+        "jumpSpd" : 24,
+        "shootStrengthAccel" : 0.02,
+        "grappleRange" : 720,
+        "grav" : 1,
+        "gravMax" : 32
+    },
+
+    "basicArrow" :
+    {
+        "spdMax" : 40,
+        "spdMin" : 25,
+        "rotateGrav" : 0.05,
+        "rotateVelocityMax" : 20,
+        "homingRange" : 540,
+        "homingSpdMax" : 2,
+        "homingSpdMin" : 1
+    },
+
+    "movableArrow" : 
+    {
+        "spd" : 10,
+        "rotateSpd" : 2
+    },
+
+    "roombaEnemy" : 
+    {
+        "spd" : 5,
+        "hpMax" : 20,
+        "damage" : 10
+    },
+
+    "droneEnemies" : 
+    [
+        {
+            "name" : "default",
+            "spd" : 4,
+            "hpMax" : 20,
+            "gunSprite" : "spr_drone_gun"
+        },
+
+        {
+            "name" : "jumbo shrimp",
+            "spd" : 1,
+            "hpMax" : 40,
+            "gunSprite" : "spr_shrimp_gun"
+        }
+    ]
+}

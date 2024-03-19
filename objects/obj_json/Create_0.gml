@@ -1,5 +1,5 @@
 //saveFileName = "todd.json";//"save.todd";
-saveFileName = "todd.json";
+saveFileName = "todd2.json";
 
 //Starting stats for most objects.
 #region Unused, but good for future reference.
@@ -85,7 +85,7 @@ saveData = saveDataDefault;
 function Save(_struct, _fileName)
 {
 	//Create file.
-	var _string = json_stringify(_struct, true);
+	var _string = json_stringify(_struct);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
 	buffer_write(_buffer, buffer_string, _string);
 	buffer_save(_buffer, _fileName);
@@ -162,6 +162,14 @@ jsonData = Load("data.json");
 //Load save.
 if(file_exists(saveFileName))
 {
+	//show_debug_message("SAVE FOUND " + string(Load(saveFileName)));
 	//LoadSave();
-}else Save(saveData, saveFileName);
+}else 
+{
+	//show_debug_message("CREATING NEW SAVE");
+	Save(saveData, saveFileName);
+}
+
+if(os_browser != browser_not_a_browser)
+	Save(saveData, saveFileName);
 //show_debug_message("AHHHHHH")

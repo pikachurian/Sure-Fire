@@ -1,8 +1,11 @@
 switch(state)
 {
 	case PS.setup:
-		LoadData(obj_json.jsonData.player);
-		ChangeState(PS.main);
+		if(obj_json.jsonData != noone)
+		{
+			LoadData(obj_json.jsonData.player);
+			ChangeState(PS.main);
+		}
 		break;
 	
 	case PS.main:

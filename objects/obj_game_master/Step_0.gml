@@ -13,20 +13,35 @@ if(keyboard_check_pressed(vk_f4))
 switch(state)
 {
 	case GS.setup:
-		room_goto_next();
 		obj_json.saveData = obj_json.Load(obj_json.saveFileName);
 		ChangeState(GS.main);
-		
+		show_debug_message("Setup");
+		if(os_browser == browser_not_a_browser)
+			room_goto(rm_title);
+		else
+			room_goto(rm_click_to_start);
 		break;
 		
 	case GS.main:
 		switch(room)
 		{
+			case rm_click_to_start:
+				if(mouse_check_button_pressed(mb_any))
+				{
+					room_goto(rm_title);
+				}
+				break;
+				
 			case rm_title:
+				show_debug_message("title");
 				//Victory reward.
-				obj_land_shark.image_alpha = 0;
-				if(obj_json.saveData.won == true)
-					obj_land_shark.image_alpha = 1;
+				var _shark = instance_nearest(x, y, obj_land_shark)
+				if(_shark != noone)
+				{
+					_shark.image_alpha = 0;
+					if(obj_json.saveData.won == true)
+						_shark.image_alpha = 1;
+				}
 				
 				//Credits show.
 				obj_title.sprite_index = spr_title_with_credits;
@@ -45,6 +60,7 @@ switch(state)
 					room_goto(obj_json.saveData.theRoom);
 					show_debug_message(rm_start);
 				}
+				show_debug_message("switch");
 				break;
 				
 			case rm_ending:

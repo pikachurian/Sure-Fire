@@ -23,9 +23,16 @@ switch(state)
 		switch(room)
 		{
 			case rm_title:
+				//Victory reward.
 				obj_land_shark.image_alpha = 0;
 				if(obj_json.saveData.won == true)
 					obj_land_shark.image_alpha = 1;
+				
+				//Credits show.
+				obj_title.sprite_index = spr_title_with_credits;
+				if(obj_json.saveData.player.grappleUnlocked == false)
+					obj_title.sprite_index = spr_title;
+				
 				if(keyboard_check_pressed(ord("C")))
 					obj_json.ClearSave();
 				

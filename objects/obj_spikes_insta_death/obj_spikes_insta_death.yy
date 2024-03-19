@@ -33,5 +33,5 @@
     "path": "sprites/spr_insta_kill/spr_insta_kill.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

@@ -1,4 +1,4 @@
-damage = 9000;
+damage = 10;//9000;
 
 //knock back/force values.
 //Relative to player approach.

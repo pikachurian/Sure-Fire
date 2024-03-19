@@ -21,13 +21,13 @@ function Action()
 		}
 	}
 	
-	if(sprite_index == blueSprite)
+	/*if(sprite_index == blueSprite)
 		sprite_index = redSprite
 	else
 		sprite_index = blueSprite
 		
 	image_speed = 1;
-	image_index = 0;
+	image_index = 0;*/
 	
 	//Activate reactive objects.
 	for(var _i = 0; _i < array_length(reactiveObjects); _i ++)
@@ -36,5 +36,17 @@ function Action()
 		{
 			Reaction();
 		}
+	}
+	
+	//Flip all targets' color.
+	with(obj_switch_trigger)
+	{
+		if(sprite_index == blueSprite)
+			sprite_index = redSprite
+		else
+			sprite_index = blueSprite
+		
+		image_speed = 1;
+		image_index = 0;
 	}
 }

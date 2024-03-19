@@ -206,9 +206,11 @@ function UpdateSprite()
 function Die()
 {
 	sprite_index = deadSprite;
-	image_alpha = 0.2;
+	image_alpha = 0.5;//0.2;
+	image_speed = 0
+	isDead = true;
 	ChangeState(ES.dead);
-	instance_destroy();
+	//instance_destroy();
 
 }
 

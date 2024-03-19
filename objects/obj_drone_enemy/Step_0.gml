@@ -73,6 +73,11 @@ switch(state)
 		Hover();
 		//Update shoot and aim.
 		break;
+		
+	case ES.dead:
+		ApplyGravity();
+		MoveAndSlide();
+		break;
 }
 
 lastX = x;

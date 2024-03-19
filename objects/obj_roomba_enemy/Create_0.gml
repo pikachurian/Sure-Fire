@@ -85,3 +85,13 @@ function CheckBulletHit()
 		}
 	}
 }
+
+function LoadData(_struct)
+{
+	spd = _struct.spd;
+	hpMax = _struct.hpMax;
+	hp = hpMax;
+	damage = _struct.damage;
+}
+
+LoadData(obj_json.jsonData.roombaEnemy);

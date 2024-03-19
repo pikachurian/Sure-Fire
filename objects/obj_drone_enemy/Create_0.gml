@@ -43,6 +43,8 @@ waypointID = 0;
 
 distanceToFloor = 240;
 
+name = "drone";
+
 walkSprite = spr_drone;//spr_enemy_beta;
 idleSprite = spr_drone;//spr_enemy_beta;
 hurtSprite = spr_drone;//spr_enemy_beta;
@@ -50,7 +52,7 @@ deadSprite = spr_drone;//spr_enemy_beta;
 gunSprite = spr_drone_gun;
 
 function LoadData(_struct)
-{
+{/*
 	walkSprite = GetSprite(_struct.sprite);
 	idleSprite = GetSprite(_struct.sprite);
 	hurtSprite = GetSprite(_struct.sprite);
@@ -59,7 +61,12 @@ function LoadData(_struct)
 	
 	spd = _struct.spd;
 	hp = _struct.hp;
+	hpMax = _struct.hpMax;*/
+	name = _struct.name;
+	spd = _struct.spd;
 	hpMax = _struct.hpMax;
+	hp = hpMax;
+	gunSprite = GetSprite(_struct.gunSprite);
 }
 
 function Hover()
@@ -267,3 +274,7 @@ function CheckBulletHit()
 		}
 	}
 }
+
+//Load the JSON data of a random drone enemy.
+var _arrayLength = array_length(obj_json.jsonData.droneEnemies);
+LoadData(obj_json.jsonData.droneEnemies[irandom(_arrayLength - 1)]);

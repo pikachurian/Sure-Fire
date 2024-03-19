@@ -110,7 +110,7 @@ function ShootArrowLogic()
 		{
 			var _newShootAngle = point_direction(0, 0, GetInput(INPUT.horizontalAxis), GetInput(INPUT.verticalAxis));
 	
-			if(IsGrounded())
+			if(isGrounded == true)
 			{
 				if(_newShootAngle > 181) && (_newShootAngle < 359)
 				{
